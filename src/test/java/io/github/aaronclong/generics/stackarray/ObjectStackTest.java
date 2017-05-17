@@ -1,4 +1,4 @@
-//package StackArray;
+//package io.github.aaronclong.generics.stackarray;
 //
 //import org.junit.Assert;
 //import org.junit.Test;
