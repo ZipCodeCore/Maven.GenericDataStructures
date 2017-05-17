@@ -12,4 +12,5 @@ Implement Table<K,V> so that it manages an ArrayList of Entry<K,V>.  You must im
     * `put` which takes a key and value and sets the value in the ArrayList to Entry(key, value);
         * Remember, a key point to exactly one value
     * `remove` which takes a key and removes it from the ArrayList if it's in there.  It's a void method; no return type.
-4.
+4. TableNested -- Take the previous microlab, and make Entry a nested class.  Think about if it'll need to be generic
+or not.
