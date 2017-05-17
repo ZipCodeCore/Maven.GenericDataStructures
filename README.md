@@ -14,3 +14,4 @@ Implement Table<K,V> so that it manages an ArrayList of Entry<K,V>.  You must im
     * `remove` which takes a key and removes it from the ArrayList if it's in there.  It's a void method; no return type.
 4. TableNested -- Take the previous microlab, and make Entry a nested class.  Think about if it'll need to be generic
 or not.
+5. Swap -- Get the test to pass.  Look at the specific values being passed in to help you figure it out.
