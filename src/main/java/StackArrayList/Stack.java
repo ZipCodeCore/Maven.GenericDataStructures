@@ -8,9 +8,12 @@ import java.util.ArrayList;
  */
 public class Stack<E> {
     private ArrayList elements;
-
+    private String isEmpty = null;
 
     public Stack(){
+        Stack<E> elements = new Stack<>();
+
+
 
     }
 }
