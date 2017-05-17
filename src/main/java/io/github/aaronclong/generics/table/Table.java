@@ -1,4 +1,4 @@
-package Table;
+package io.github.aaronclong.generics.table;
 
 import java.util.ArrayList;
 
@@ -10,8 +10,8 @@ import java.util.ArrayList;
  * Void return on `remove`.
  */
 public class Table<K, V> {
-    private ArrayList entries;
+  private ArrayList entries;
 
-    public Table() {
-    }
+  public Table() {
+  }
 }

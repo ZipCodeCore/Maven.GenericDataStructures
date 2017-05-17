@@ -1,4 +1,4 @@
-package TableNested;
+package io.github.aaronclong.generics.TableNested;
 
 import java.util.ArrayList;
 

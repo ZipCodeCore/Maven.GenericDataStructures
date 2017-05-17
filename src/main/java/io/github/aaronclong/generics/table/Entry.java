@@ -1,4 +1,4 @@
-package Table;
+package io.github.aaronclong.generics.table;
 
 public class Entry<K, V> {
     private K key;
