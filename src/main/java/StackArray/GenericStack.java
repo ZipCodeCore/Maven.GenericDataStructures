@@ -11,8 +11,9 @@ import java.util.Arrays;
 public class GenericStack<E> {
     private E[] elements;
 
+    @SuppressWarnings("unchecked")
     public GenericStack() {
-    elements = (E[]) new GenericStack[0];
+    elements = (E[]) new Object [0];
     }
 
     public boolean isEmpty(){
