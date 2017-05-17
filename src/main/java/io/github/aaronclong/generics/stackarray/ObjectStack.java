@@ -8,8 +8,15 @@ package io.github.aaronclong.generics.stackarray;
  */
 public class ObjectStack<E> {
   private Object[] elements;
+  private int currentElement;
 
   public ObjectStack() {
-
+    elements = 
   }
+
+  public boolean isEmpty() {
+    return currentElement == 0;
+  }
+
+
 }
