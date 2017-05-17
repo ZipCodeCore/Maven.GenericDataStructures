@@ -9,9 +9,19 @@ import java.util.ArrayList;
  * It also needs a remove method which takes a key and, if that key exists in the arraylist, removes that item.
  * Void return on `remove`.
  */
-public class Table<K, V> {
-    private ArrayList entries;
-
-    public Table() {
-    }
-}
+//public class Table<K, V> {
+//    private ArrayList entries;
+//
+//    public Entry get(K key) {
+//
+//        for (Entry entry : entries) {
+//            if (entry.getKey().equals(key)) {
+//                return entry;
+//            }
+//        }
+//    }
+//
+//    public Table() {
+//        entries = new ArrayList();
+//    }
+//}
