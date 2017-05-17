@@ -9,9 +9,8 @@ import java.util.ArrayList;
 public class Stack<E> {
     private ArrayList<E> elements;
 
-
     public Stack(){
-        elements = new ArrayList<E>();
+        elements = new ArrayList<>();
     }
 
     public void push(E e){
@@ -23,7 +22,7 @@ public class Stack<E> {
     }
 
     public boolean isEmpty(){
-        return elements.size() == 0;
+        return elements.isEmpty();
     }
 
 }
