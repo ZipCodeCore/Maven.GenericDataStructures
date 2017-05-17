@@ -11,6 +11,25 @@ public class Stack<E> {
 
 
     public Stack(){
+        elements = new ArrayList<E>();
+    }
 
+    public void push(E item){
+        elements.add(item);
+    }
+
+    public E pop(){
+        if (elements.isEmpty()){
+            throw new IndexOutOfBoundsException();
+        }
+        return(E)elements.remove(elements.size()-1);
+    }
+
+    public boolean isEmpty(){
+        boolean empty = false;
+        if (elements.isEmpty()){
+            empty =true;
+        }
+        return empty;
     }
 }
