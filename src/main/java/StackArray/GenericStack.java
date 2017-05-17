@@ -1,5 +1,6 @@
 package StackArray;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
@@ -11,5 +12,15 @@ public class GenericStack<E> {
     private E[] elements;
 
     public GenericStack() {
+        elements = new E[32];
+    }
+
+    public boolean isEmpty(){
+        if(elements.length==0) return true;
+        else return false;
+    }
+
+    public void push(E e){
+        elements[elements.length] = e;
     }
 }
