@@ -7,9 +7,9 @@ package io.github.aaronclong.generics.stackarray;
  * @param <E> generic
  */
 public class ObjectStack<E> {
-    private Object[] elements;
+  private Object[] elements;
 
-    public ObjectStack() {
+  public ObjectStack() {
 
-    }
+  }
 }
