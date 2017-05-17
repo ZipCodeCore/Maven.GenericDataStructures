@@ -8,13 +8,13 @@ package StackArray;
 public class GenericStack<E> {
     private E[] elements;
 
+    @SuppressWarnings("unchecked")
     public GenericStack() {
         elements = (E[]) new Object[0];
     }
 
     public boolean isEmpty(){
-        if(elements.length==0) return true;
-        else return false;
+        return elements.length == 0;
     }
 
     public void push(E e){
@@ -22,6 +22,7 @@ public class GenericStack<E> {
         elements[elements.length-1] = e;
     }
 
+    @SuppressWarnings("unchecked")
     private void expandElementsByOne(){
         E[] elementsClone = elements.clone();
         elements = (E[]) new Object[elements.length+1];
@@ -30,16 +31,17 @@ public class GenericStack<E> {
         }
     }
 
-    public E pop(){
-        E e = elements[elements.length -1];
+    public E pop() {
+        E e = elements[elements.length - 1];
         removeLastElement();
         return e;
     }
 
-    private void removeLastElement(){
+    @SuppressWarnings("unchecked")
+    private void removeLastElement() {
         E[] elementsClone = elements.clone();
-        elements = (E[]) new Object[elements.length-1];
-        for(int i = 0; i < elements.length; i++){
+        elements = (E[]) new Object[elements.length - 1];
+        for (int i = 0; i < elements.length; i++) {
             elements[i] = elementsClone[i];
         }
     }
