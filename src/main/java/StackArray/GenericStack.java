@@ -1,6 +1,8 @@
 package StackArray;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * Expand the ArrayList implementation of stack here to use an E[] array.  Still implement push, pop, and isEmpty.
@@ -11,5 +13,7 @@ public class GenericStack<E> {
     private E[] elements;
 
     public GenericStack() {
+
     }
+
 }
