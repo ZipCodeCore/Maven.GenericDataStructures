@@ -20,31 +20,14 @@ public class ObjectStack<E> {
     }
 
     public void push(E e) {
-        expandElementsByOne();
+        elements = Arrays.copyOf(elements, elements.length + 1);
         elements[elements.length - 1] = e;
-    }
-
-    private void expandElementsByOne() {
-        Object[] elementsClone = elements.clone();
-        elements = new Object[elements.length + 1];
-        for (int i = 0; i < elementsClone.length; i++) {
-            elements[i] = elementsClone[i];
-        }
     }
 
     public Object pop() {
         Object o = elements[elements.length - 1];
-        removeLastElement();
+        elements = Arrays.copyOf(elements, elements.length - 1);
         return o;
-    }
-
-    @SuppressWarnings("unchecked")
-    private void removeLastElement() {
-        Object[] elementsClone = elements.clone();
-        elements = new Object[elements.length - 1];
-        for (int i = 0; i < elements.length; i++) {
-            elements[i] = elementsClone[i];
-        }
     }
 
 }
