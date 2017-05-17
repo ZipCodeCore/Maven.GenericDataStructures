@@ -29,6 +29,10 @@ public class Table<K, V> {
   }
 
   public void put(K key, V value) {
+    Entry<K,V> entryAlreadyExist = locateEntry(key);
+    if (entryAlreadyExist != null) {
+      remove(key);
+    }
     entries.add(new Entry<K,V>(key, value));
   }
 
