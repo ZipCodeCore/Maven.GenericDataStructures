@@ -19,6 +19,7 @@ public class ObjectStack<E> {
         elements[elements.length - 1] = element;
     }
 
+    @SuppressWarnings("unchecked")
     public E pop() {
         E retval = (E) elements[elements.length - 1];
         elements = Arrays.copyOf(elements, elements.length - 1);

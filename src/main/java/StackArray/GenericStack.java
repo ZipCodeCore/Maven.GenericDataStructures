@@ -10,6 +10,7 @@ import java.util.Arrays;
 public class GenericStack<E> {
     private E[] elements;
 
+    @SuppressWarnings("unchecked")
     public GenericStack() {
         elements = (E[]) new Object[0];
     }
