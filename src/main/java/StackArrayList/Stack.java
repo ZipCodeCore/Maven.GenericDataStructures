@@ -15,12 +15,7 @@ public class Stack<E> extends ArrayList<E> {
     }
 
     public E pop() throws IndexOutOfBoundsException {
-        try {
-            return remove(size() -1 );
-        } catch (IndexOutOfBoundsException e) {
-            throw new IndexOutOfBoundsException();
-        }
-
+        return remove(size() -1 );
     }
 
     public boolean isEmpty() {
