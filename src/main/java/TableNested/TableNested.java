@@ -14,11 +14,11 @@ public class TableNested<K, V> {
         entries = new ArrayList<Entry>();
     }
 
-    public V get(K key){
-        for(int i = 0; i < entries.size(); i++){
+    public V get(K key) {
+        for (int i = 0; i < entries.size(); i++) {
             Entry currentEntry = entries.get(i);
             K currentKey = currentEntry.getKey();
-            if(currentKey.equals(key)){
+            if (currentKey.equals(key)) {
                 Entry match = entries.get(i);
                 return match.getValue();
             }
@@ -26,32 +26,32 @@ public class TableNested<K, V> {
         return null;
     }
 
-    public void put(K key, V value){
+    public void put(K key, V value) {
         boolean keyExistsAlready = false;
         for (int i = 0; i < entries.size(); i++) {
-            if(entries.get(i).getKey().equals(key)) {
+            if (entries.get(i).getKey().equals(key)) {
                 entries.set(i, new Entry(key, value));
                 keyExistsAlready = true;
             }
         }
 
-        if(!keyExistsAlready){
+        if (!keyExistsAlready) {
             Entry newEntry = new Entry(key, value);
             entries.add(newEntry);
         }
     }
 
-    public void remove(K key){
-        for(int i = 0; i < entries.size(); i++){
+    public void remove(K key) {
+        for (int i = 0; i < entries.size(); i++) {
             K currentKey = entries.get(i).getKey();
-            if(currentKey.equals(key)){
+            if (currentKey.equals(key)) {
                 entries.remove(i);
             }
         }
     }
 
 
-     class Entry{
+    class Entry {
         private K key;
         private V value;
 
