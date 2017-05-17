@@ -11,6 +11,7 @@ public class GenericStack<E> {
     private E[] elements;
     private int endPlusOne;
 
+    @SuppressWarnings("unchecked")
     public GenericStack() {
         elements = (E[]) new Object[10];
         endPlusOne = 0;
@@ -26,7 +27,9 @@ public class GenericStack<E> {
 
     public E pop(){
         endPlusOne--;
-        return elements[endPlusOne];
+        E result = elements[endPlusOne];
+        elements = Arrays.copyOfRange(elements, 0, elements.length);
+        return result;
     }
 
     public boolean isEmpty(){

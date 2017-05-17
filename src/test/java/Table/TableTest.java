@@ -41,7 +41,6 @@ public class TableTest {
         //Given an empty table
         Table<String, Integer> table = new Table<String, Integer>();
         // When we put an item in it
-        table.put("foo", 1);
         // And we remove that item
         table.remove("foo");
         // Then we should get back null for that balue

@@ -40,4 +40,13 @@ public class Table<K, V> {
             entries.add(newEntry);
         }
     }
+
+    public void remove(K key){
+        for (int i=0; i<entries.size(); i++){
+            Entry<K,V> currentEntry = entries.get(i);
+            if(currentEntry.getKey().equals(key)){
+                entries.remove(i);
+            }
+        }
+    }
 }
