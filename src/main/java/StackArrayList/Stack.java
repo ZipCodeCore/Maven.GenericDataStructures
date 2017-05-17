@@ -21,7 +21,7 @@ public class Stack<E> {
         return elements.remove(elements.size()-1);
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() throws IndexOutOfBoundsException{
         return elements.size() == 0;
     }
 }
