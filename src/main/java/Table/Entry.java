@@ -1,6 +1,7 @@
 package Table;
 
 public class Entry<K, V> {
+
     private K key;
     private V value;
 
@@ -18,3 +19,4 @@ public class Entry<K, V> {
     }
 
 }
+
