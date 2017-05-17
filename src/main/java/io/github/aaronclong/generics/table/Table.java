@@ -5,15 +5,15 @@ import java.util.ArrayList;
 /**
  * This class needs to manage an ArrayList of Entry objects.
  * It needs a get method that takes a key and returns
- * its corresponding value, or null of the key is not in the arraylist.
+ * its corresponding value, or null of the key is not in the ArrayList.
  * It needs a put method that takes a key and value
  * and makes an entry with key, value.
  * NOTE: There cannot be two entries with the same key.
  * It also needs a remove method which takes a key and,
- *  if that key exists in the arraylist, removes that item.
+ *  if that key exists in the ArrayList, removes that item.
  * Void return on `remove`.
  */
-public class Table<K, V> {
+public class Table<K,V> {
   private ArrayList<Entry<K,V>> entries;
 
   public Table() {
