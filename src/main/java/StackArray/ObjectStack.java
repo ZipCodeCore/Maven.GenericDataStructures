@@ -11,6 +11,6 @@ public class ObjectStack<E> {
     private Object[] elements;
 
     public ObjectStack() {
-
+        elements = new Object[10];
     }
 }
