@@ -1,4 +1,4 @@
-package StackArrayList;
+package io.github.aaronclong.generics.stackarraylist;
 
 import java.util.ArrayList;
 

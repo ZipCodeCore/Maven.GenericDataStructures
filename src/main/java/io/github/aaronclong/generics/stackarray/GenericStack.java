@@ -1,6 +1,4 @@
-package StackArray;
-
-import java.util.Arrays;
+package io.github.aaronclong.generics.stackarray;
 
 /**
  * Expand the ArrayList implementation of stack here to use an E[] array.  Still implement push, pop, and isEmpty.
