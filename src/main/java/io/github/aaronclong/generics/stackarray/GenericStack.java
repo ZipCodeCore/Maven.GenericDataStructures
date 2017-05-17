@@ -1,6 +1,7 @@
 package io.github.aaronclong.generics.stackarray;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 /**
  * Expand the ArrayList implementation of stack here to use an E[] array.
@@ -14,16 +15,24 @@ public class GenericStack<E> {
   private int currentIndex;
 
   public GenericStack() {
-    elements = sizeArray(20);
+    setArray(20);
   }
 
   @SuppressWarnings("unchecked")
-  private E[] sizeArray(int arrayLength) {
+  private void setArray(int arrayLength) {
     length = arrayLength;
-    return (E[]) new Object[arrayLength];
+    elements = (E[]) new Object[arrayLength];
+  }
+
+  private void resizeArray() {
+    elements = Arrays.copyOf(elements, length * 2);
+    length *= 2;
   }
 
   public void push(E e) {
+    if (length <= currentIndex) {
+      resizeArray();
+    }
     elements[currentIndex] = e;
     incrementCurrentIndex();
   }
