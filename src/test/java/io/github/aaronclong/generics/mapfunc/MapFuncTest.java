@@ -1,4 +1,4 @@
-//package MapFunc;
+package io.github.aaronclong.generics.mapfunc;
 //
 //import MapFunc.MapFunc;
 //import org.junit.Test;
