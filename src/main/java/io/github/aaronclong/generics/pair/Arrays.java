@@ -1,7 +1,6 @@
-package Pair;
+package io.github.aaronclong.generics.pair;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * In here you must make firstLast, which will return a pair of the first element in the array list and the last

@@ -1,4 +1,4 @@
-package Pair;
+package io.github.aaronclong.generics.pair;
 
 /**
  * You need to store two values of type `E`, set them in a constructor, and have the following methods,
