@@ -27,7 +27,9 @@ public class Arrays {
     return Collections.min(a);
   }
 
-  public static <E extends Comparable<? super E>> Pair<E> minMax() {
-    return new Pair<E>();
+  public static <E extends Comparable<? super E>> Pair<E> minMax(ArrayList<E> a) {
+    E theMax = max(a);
+    E theMin = min(a);
+    return new Pair<E>(theMin, theMax);
   }
 }
