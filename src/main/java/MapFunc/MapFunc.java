@@ -12,7 +12,7 @@ public class MapFunc {
 
 
     public static <T,R> ArrayList<R> map(ArrayList<T> list, Function<T,R> function){
-        
+
         ArrayList<R> mappedList = new ArrayList();
 
         for (int i = 0; i < list.size(); i++) {
