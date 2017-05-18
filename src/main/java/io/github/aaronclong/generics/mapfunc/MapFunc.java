@@ -10,5 +10,12 @@ import java.util.function.Function;
  *  of the first after the function is applied to them.
  */
 public class MapFunc {
+  public static <T, R> ArrayList map(ArrayList<T> list, Function<T, R> func) {
+    ArrayList listFinished = new ArrayList();
+    for (T obj : list) {
+      listFinished.add(func.apply(obj));
+    }
+    return listFinished;
+  }
 
 }
