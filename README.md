@@ -14,3 +14,10 @@ Implement Table<K,V> so that it manages an ArrayList of Entry<K,V>.  You must im
     * `remove` which takes a key and removes it from the ArrayList if it's in there.  It's a void method; no return type.
 4. TableNested -- Take the previous microlab, and make Entry a nested class.  Think about if it'll need to be generic
 or not.
+5. Swap -- Get the test to pass.  Look at the specific values being passed in to help you figure it out.  Modify the
+tests, not the code.
+6. ArrayListCombiner -- Write two methods, `superCombiner` and `extendCombiner`, which each take two arraylists and append
+all of the items from the second to the first.  `superCombiner` should use `? super E` and `extendCombiner` should use 
+`? extends E`.
+7. MapFunc -- MAke a `map` method that takes an ArrayList and a `Function<T,R>` object and returns an arraylist 
+containing all of the elements of the first with the function applied to them.
