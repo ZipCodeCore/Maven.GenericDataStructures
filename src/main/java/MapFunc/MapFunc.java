@@ -9,4 +9,12 @@ import java.util.function.Function;
  */
 public class MapFunc {
 
+    public static <T,R> ArrayList<R> map(ArrayList<T> theList, Function<T,R> function){
+        ArrayList<R> result = new ArrayList<>();
+        for(T item: theList){
+            result.add(function.apply(item));
+        }
+        return result;
+    }
+
 }
