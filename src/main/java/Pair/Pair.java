@@ -7,7 +7,7 @@ package Pair;
  * min -> returns the minimum of the pair
  * max -> returns the maximum of the pair
  */
-public class Pair <E extends Comparable <? super E>>  {
+public class Pair <E extends Comparable>  {
 
     private E first;
     private E second;
