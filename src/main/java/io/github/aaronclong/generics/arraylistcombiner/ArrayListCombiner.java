@@ -1,8 +1,5 @@
 package io.github.aaronclong.generics.arraylistcombiner;
 
-import io.github.aaronclong.generics.employee.Manager;
-import io.github.aaronclong.generics.employee.Employee;
-
 import java.util.ArrayList;
 
 /**
@@ -16,7 +13,6 @@ public class ArrayListCombiner {
   public static <E> void superCombiner(ArrayList<? super E> listOne,
                                  ArrayList listTwo) {
     listOne.addAll(listTwo);
-
   }
 
   public static <E> void extendCombiner(ArrayList<? extends E> listOne,
