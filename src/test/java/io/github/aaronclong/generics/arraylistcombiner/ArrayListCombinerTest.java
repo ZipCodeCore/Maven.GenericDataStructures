@@ -1,12 +1,4 @@
-package ArrayListCombiner;
-
-import Employee.Employee;
-import Employee.Manager;
-import org.junit.Test;
-
-import org.junit.Assert;
-
-import java.util.ArrayList;
+package io.github.aaronclong.generics.arraylistcombiner;
 
 public class ArrayListCombinerTest {
 //    Employee foo = new Employee("FOO", 100);

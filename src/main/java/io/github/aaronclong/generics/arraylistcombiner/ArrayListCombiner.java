@@ -1,4 +1,4 @@
-package ArrayListCombiner;
+package io.github.aaronclong.generics.arraylistcombiner;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package Employee;
+package io.github.aaronclong.generics.employee;
 
 public class Employee {
     private String name;
