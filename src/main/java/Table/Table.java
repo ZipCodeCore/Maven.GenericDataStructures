@@ -11,28 +11,10 @@ import java.util.ArrayList;
  */
 public class Table<K, V> {
 
-    class Entry{
-        private K key;
-        private V value;
-
-        public Entry(K key, V value) {
-            this.key = key;
-            this.value = value;
-        }
-
-        public K getKey() {
-            return key;
-        }
-
-        public V getValue() {
-            return value;
-        }
-    }
-
-    private ArrayList<Entry> entries;
+    private ArrayList<Entry<K, V>> entries;
 
     public Table() {
-        entries = new ArrayList<Entry>();
+        entries = new ArrayList<Entry<K, V>>();
     }
 
     public V get(K k){
@@ -46,7 +28,7 @@ public class Table<K, V> {
     }
 
     public void put(K k, V v){
-        Entry entry = new Entry(k, v);
+        Entry<K, V> entry = new Entry<K, V>(k, v);
         for(int i =0; i <entries.size(); i++){
             if(entries.get(i).getKey().equals(k)){
                 entries.remove(i);
