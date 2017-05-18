@@ -17,4 +17,6 @@ public class Entry<K, V> {
         return value;
     }
 
+    public void setValue(V value) { this.value = value; }
+
 }
