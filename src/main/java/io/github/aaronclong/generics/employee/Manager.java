@@ -3,13 +3,13 @@ package io.github.aaronclong.generics.employee;
 public class Manager extends Employee {
   private double bonus;
 
-  public Manager(String name, double salary) {
-    super(name, salary);
+  public Manager(String name, double theSalary) {
+    super(name, theSalary);
     bonus = 0;
   }
 
-  public void setBonus(double bonus) {
-    this.bonus = bonus;
+  public void setBonus(double theBonus) {
+    bonus = bonus;
   }
 
   public double getSalary() { // Overrides superclass method
