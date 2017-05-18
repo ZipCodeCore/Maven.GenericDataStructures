@@ -1,4 +1,4 @@
-package Swap;
+package io.github.aaronclong.generics.swap;
 //
 //import org.junit.Assert;
 //import org.junit.Test;
