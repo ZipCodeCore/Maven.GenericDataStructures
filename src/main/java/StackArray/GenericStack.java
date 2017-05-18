@@ -1,5 +1,6 @@
 package StackArray;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
@@ -10,6 +11,28 @@ import java.util.Arrays;
 public class GenericStack<E> {
     private E[] elements;
 
+    public void push(E o) {
+
+
+        Object[] newArr = new Object[elements.length+1];
+        System.arraycopy(elements, 0, newArr, 0, elements.length);
+        newArr[elements.length] = o;
+        elements = (E[])newArr;
+    }
+
+    public E pop() throws IndexOutOfBoundsException {
+
+            E result = elements[elements.length - 1];
+            elements = Arrays.copyOf(elements, elements.length-1);
+            return result;
+
+    }
+
+        public boolean isEmpty() {
+            return elements.length == 0;
+    }
+
     public GenericStack() {
+        elements = (E[]) new Object[0];
     }
 }
