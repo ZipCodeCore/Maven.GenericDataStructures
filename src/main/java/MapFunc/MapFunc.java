@@ -9,14 +9,13 @@ import java.util.function.Function;
  */
 public  class  MapFunc {
 
-    public static <T,R> ArrayList map(ArrayList<T> list, Function<T,R> obj) {
+    public static <T,R> ArrayList<R> map(ArrayList<T> list, Function<T,R> obj) {
         ArrayList<R> result = new ArrayList<>();
 
         for (T el : list) {
-            result.add(obj.apply(el));
+            R res = obj.apply(el);
+            result.add(res);
         }
-
         return result;
     }
-
 }
