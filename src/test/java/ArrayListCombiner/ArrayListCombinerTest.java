@@ -44,5 +44,4 @@ public class ArrayListCombinerTest {
         expected.add(bar);
         Assert.assertEquals(expected, first);
     }
-
 }
