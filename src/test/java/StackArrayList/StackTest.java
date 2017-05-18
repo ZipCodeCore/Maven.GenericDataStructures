@@ -8,7 +8,7 @@ public class StackTest {
     @Test
     public void testEmptyStackStopsBeingEmptyWhenAnItemIsAdded() throws Exception {
         // Given an empty stack
-        Stack<String> stack = new Stack<>();
+        Stack<String> stack = new Stack<String>();
         // Assert that it starts empty
         Assert.assertEquals(true, stack.isEmpty());
         // When an element gets pushed

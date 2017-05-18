@@ -26,10 +26,6 @@ public class Stack<E> {
     }
 
     public boolean isEmpty(){
-        boolean empty = false;
-        if (elements.isEmpty()){
-            empty =true;
-        }
-        return empty;
+       return elements.isEmpty() ;
     }
 }
