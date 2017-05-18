@@ -19,5 +19,14 @@ tests, not the code.
 6. ArrayListCombiner -- Write two methods, `superCombiner` and `extendCombiner`, which each take two arraylists and append
 all of the items from the second to the first.  `superCombiner` should use `? super E` and `extendCombiner` should use 
 `? extends E`.
-7. MapFunc -- MAke a `map` method that takes an ArrayList and a `Function<T,R>` object and returns an arraylist 
+7. MapFunc -- Make a `map` method that takes an ArrayList and a `Function<T,R>` object and returns an arraylist 
 containing all of the elements of the first with the function applied to them.
+8. Pair -- This is a multi-step one:
+    1. Create a Pair<E> that stores a pair of elements of type `E`.
+    2. Create two methods, `min` and `max`, that return the largest and smallest of the `Pair`.
+    3. Create a utility class called `Arrays` and, in that, create a method
+    <br>`public static <___> Pair<E> firstLast(ArrayList<___> a)`<br>
+    That returns a Pair containing the first and last element of the array.  <br>NOTE: The `<___>` is there because you
+    need to fill in the blank.
+    4. In `Arrays` make two methods, `min` and `max` that returns the smallest and largest elements in the ArrayList.
+    5. In `Arrays` make a `minMax` function that returns a `Pair` with the minimum and maximum values of the ArrayList.
