@@ -26,9 +26,11 @@ public class ObjectStack<E> {
     public Object pop() throws IndexOutOfBoundsException{
         Object lastElement= elements[elements.length-1];
 
+
         if (elements.length==0) {
             throw new IndexOutOfBoundsException();
         }
+
         elements=Arrays.copyOf(elements, elements.length-1);
         return lastElement;
     }
