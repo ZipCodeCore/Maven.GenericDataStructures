@@ -1,20 +1,29 @@
 package Table;
 
-public class Entry<K, V> {
+public class Entry<K, V>
+{
     private K key;
     private V value;
 
-    public Entry(K key, V value) {
+    public Entry(K key, V value)
+    {
         this.key = key;
         this.value = value;
     }
 
-    public K getKey() {
+    public K getKey()
+    {
         return key;
     }
 
-    public V getValue() {
+    public V getValue()
+    {
         return value;
+    }
+
+    public void setValue(V value)
+    {
+        this.value = value;
     }
 
 }

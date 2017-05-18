@@ -1,6 +1,7 @@
 package Table;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * This class needs to manage an ArrayList of Entry objects.  It needs a get method that takes a key and returns
@@ -10,8 +11,65 @@ import java.util.ArrayList;
  * Void return on `remove`.
  */
 public class Table<K, V> {
-    private ArrayList entries;
+    private ArrayList <Entry> entries;
+    private static int counter;
 
-    public Table() {
+    public Table()
+    {
+        entries = new ArrayList<Entry>();
+        counter = 0;
+    }
+
+    public V get(K key)
+    {
+           if(isEmpty())
+           {
+               return null;
+           }
+           else
+           {
+               for(Entry e: entries)
+               {
+                   if(e.getKey().equals(key))
+                   {
+                       return (V)e.getValue();
+                   }
+               }
+               return null;
+           }
+    }
+
+    public void put(K key, V value)
+    {
+        for(Entry e: entries)
+        {
+            if(e.getKey().equals(key))
+            {
+                e.setValue(value);
+                break;
+            }
+        }
+        entries.add(new Entry<K, V>(key, value));
+        counter++;
+
+    }
+
+    public void remove(K key)
+    {
+        for(int i = 0; i < entries.size(); i++)
+        {
+            if(entries.get(i).getKey().equals(key))
+            {
+                entries.remove(i);
+                counter--;
+
+            }
+        }
+
+    }
+
+    public boolean isEmpty()
+    {
+        return counter == 0;
     }
 }
