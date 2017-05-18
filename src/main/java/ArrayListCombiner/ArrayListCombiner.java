@@ -1,5 +1,6 @@
 package ArrayListCombiner;
 
+
 import java.util.ArrayList;
 
 /**
@@ -8,5 +9,20 @@ import java.util.ArrayList;
  * The first method should be called extendCombiner and should use ? extends E
  * The second method should be called superCombiner and should use ? super E
  */
-public class ArrayListCombiner {
+public class ArrayListCombiner<E> {
+    ArrayList<String> first = new ArrayList<>();
+    ArrayList<? extends E> second= new ArrayList<E>();
+
+    public static void extendCombiner(ArrayList<String> first, ArrayList<? extends E> second){
+
+
+    }
+
+
+    public void superCombiner(){
+
+
+    }
+
+
 }
