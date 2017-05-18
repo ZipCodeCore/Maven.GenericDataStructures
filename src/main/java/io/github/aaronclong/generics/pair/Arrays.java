@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * containing the largest and smallest items from the array list
  */
 public class Arrays {
-  public static <E> Pair<E> firstLast(ArrayList<E> a) {
+  public static <E extends Comparable> Pair<E> firstLast(ArrayList<E> a) {
     return new Pair<E>();
   }
 }
