@@ -22,7 +22,11 @@ public class Stack<E> {
         elements.add(unit);
     }
 
-    public E pop () {
+    public E pop () throws IndexOutOfBoundsException {
+
+        if (elements.size() == 0){
+            throw new IndexOutOfBoundsException();
+        }
 
         return (E) elements.remove(elements.size()-1);
     }
