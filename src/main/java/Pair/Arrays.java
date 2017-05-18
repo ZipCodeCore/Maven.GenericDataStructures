@@ -17,17 +17,24 @@ public class Arrays {
     }
 
     public static <E extends Comparable> E min(ArrayList<E> list){
-        Collections.sort(list);
-        return list.get(0);
+        E min = list.get(0);
+        for(E item: list){
+            if(item.compareTo(min) < 0)
+                min = item;
+        }
+        return min;
     }
 
     public static <E extends Comparable> E max(ArrayList<E> list){
-        Collections.sort(list);
-        return list.get(list.size() - 1);
+        E max = list.get(0);
+        for(E item: list){
+            if(item.compareTo(max) > 0)
+                max = item;
+        }
+        return max;
     }
 
     public static <E extends Comparable> Pair<E> minMax(ArrayList<E> list){
-        Collections.sort(list);
-        return new Pair(0, list.get(list.size() - 1));
+        return new Pair(min(list), max(list));
     }
 }
