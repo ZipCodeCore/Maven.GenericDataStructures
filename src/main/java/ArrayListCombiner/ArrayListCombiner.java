@@ -19,6 +19,4 @@ public class ArrayListCombiner {
         first.addAll(second);
     }
 
-
-
 }
