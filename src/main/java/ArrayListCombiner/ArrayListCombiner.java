@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class ArrayListCombiner {
 
 
-
     public static <E> void extendCombiner(ArrayList<E> firstArrayList, ArrayList<? extends E> secondArrayList) {
         firstArrayList.addAll(secondArrayList);
     }
