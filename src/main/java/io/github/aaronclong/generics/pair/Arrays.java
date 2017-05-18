@@ -1,6 +1,7 @@
 package io.github.aaronclong.generics.pair;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * In here you must make firstLast, which will return a pair
@@ -12,6 +13,21 @@ import java.util.ArrayList;
  */
 public class Arrays {
   public static <E extends Comparable> Pair<E> firstLast(ArrayList<E> a) {
+    if (a.isEmpty()) {
+      return null;
+    }
+    return new Pair<E>(a.get(0), a.get(a.size() - 1));
+  }
+
+  public static <E extends Comparable<? super E>> E max(ArrayList<E> a) {
+    return Collections.max(a);
+  }
+
+  public static <E extends Comparable<? super E>> E min(ArrayList<E> a) {
+    return Collections.min(a);
+  }
+
+  public static <E extends Comparable<? super E>> Pair<E> minMax() {
     return new Pair<E>();
   }
 }
