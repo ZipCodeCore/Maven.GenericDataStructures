@@ -10,6 +10,23 @@ import java.util.Arrays;
 public class GenericStack<E> {
     private E[] elements;
 
+    @SuppressWarnings("unchecked")
     public GenericStack() {
+        elements = (E[]) new Object[0];
+    }
+
+    public void push(E element) {
+        elements = Arrays.copyOf(elements, elements.length + 1);
+        elements[elements.length - 1] = element;
+    }
+
+    public E pop() {
+        E retval = elements[elements.length - 1];
+        elements = Arrays.copyOf(elements, elements.length - 1);
+        return retval;
+    }
+
+    public boolean isEmpty() {
+        return elements.length == 0;
     }
 }
