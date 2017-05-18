@@ -17,5 +17,4 @@ public class MapFunc {
     }
     return listFinished;
   }
-
 }
