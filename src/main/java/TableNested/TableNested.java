@@ -17,7 +17,7 @@ public class TableNested<K, V> {
         entries = new ArrayList<Table.Entry<K, V>>();
     }
     // takes key and returns value or null
-    public V getKey(K key) {
+    public V get(K key) {
         for (Table.Entry<K, V> entry : entries) {
             if (entry.getKey().equals(key)){
                 return entry.getValue();
