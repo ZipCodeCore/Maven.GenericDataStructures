@@ -33,6 +33,7 @@ public class Table<K, V> {
         return;
     }
 
+
     public void remove(K key) {
         int arrayIndex = 0;
         boolean foundItem = false;

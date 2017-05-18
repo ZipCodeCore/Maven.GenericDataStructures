@@ -7,24 +7,6 @@ import java.util.ArrayList;
  * Think about how nested classes should work with generics.
  */
 
-class Entry<K, V> {
-    private K key;
-    private V value;
-
-    public Entry(K key, V value) {
-        this.key = key;
-        this.value = value;
-    }
-
-    public K getKey() {
-        return key;
-    }
-
-    public V getValue() {
-        return value;
-    }
-
-}
 
 public class TableNested<K, V> {
 
@@ -50,7 +32,7 @@ public class TableNested<K, V> {
         return;
     }
 
-    public void remove(K key) {
+   public void remove(K key) {
         int arrayIdx = 0;
         boolean foundItem = false;
         for (Entry<K, V> entry : entries) {
@@ -60,10 +42,28 @@ public class TableNested<K, V> {
             }
             arrayIdx++;
         }
-        if (foundItem) {
+        if(foundItem) {
             entries.remove(arrayIdx);
         }
         return;
     }
 
+    class Entry<K, V> {
+        private K key;
+        private V value;
+
+        public Entry(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public V getValue() {
+            return value;
+        }
+
+    }
 }
