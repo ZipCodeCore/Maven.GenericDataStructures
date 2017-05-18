@@ -1,6 +1,7 @@
 package Table;
 
 import java.util.ArrayList;
+
 /**
  * This class needs to manage an ArrayList of Entry objects.  It needs a get method that takes a key and returns
  * its corresponding value, or null of the key is not in the arraylist.  It needs a put method that takes a key and value
@@ -12,42 +13,38 @@ public class Table<K, V> {
     private ArrayList<Entry<K, V>> entries;
 
     public Table() {
-                    entries = new ArrayList<Entry<K, V>>();
-                }
-
-            public V get(K key){
-                for(int i = 0; i < entries.size(); i++){
-                    Entry<K,V> currentEntry = entries.get(i);
-                    K currentKey = currentEntry.getKey();
-                    if(currentKey.equals(key)){
-                        Entry<K,V> match = entries.get(i);
-                        return match.getValue();
-                    }
-                }
-                return null;
-            }
-
-            public void put(K key, V value){
-                boolean keyExistsAlready = false;
-                for (int i = 0; i < entries.size(); i++) {
-                    if(entries.get(i).getKey().equals(key)) {
-                        entries.set(i, new Entry<K, V>(key, value));
-                keyExistsAlready = true;
-            }
-        }
-
-        if(!keyExistsAlready){
-            Entry<K, V> newEntry = new Entry<K, V>(key, value);
-            entries.add(newEntry);
-        }
+        entries = new ArrayList<Entry<K, V>>();
     }
 
-    public void remove(K key){
-        for(int i = 0; i < entries.size(); i++){
-            K currentKey = entries.get(i).getKey();
-            if(currentKey.equals(key)){
-                entries.remove(i);
+    public V get(K key) {
+        Entry<K, V> currentEntry;
+        for (int i = 0; i < entries.size(); i++) {
+            currentEntry = entries.get(i);
+            if (currentEntry.getKey().equals(key))
+                return currentEntry.getValue();
+        }
+        return null;
+    }
+
+    public boolean put(K key, V value) {
+        K currentKey;
+        for (int i = 0; i < entries.size(); i++) {
+            currentKey = entries.get(i).getKey();
+            if (currentKey.equals(key)) {
+                entries.set(i, new Entry<K, V>(key, value));
+                return true;
             }
+        }
+        entries.add(new Entry<K, V>(key, value));
+        return true;
+    }
+
+    public void remove(K key) {
+        K currentKey;
+        for (int i = 0; i < entries.size(); i++) {
+            currentKey = entries.get(i).getKey();
+            if (currentKey.equals(key))
+                entries.remove(i);
         }
     }
 }

@@ -10,32 +10,28 @@ import java.util.Arrays;
  */
 public class GenericStack<E> {
     private E[] elements;
-    private int endPlusOne;
+    private int topOfStack;
 
     @SuppressWarnings("unchecked")
     public GenericStack() {
         elements = (E[]) new Object[10];
-        endPlusOne = 0;
+        topOfStack = 0;
     }
 
     public void push(E e) {
-        if (endPlusOne == elements.length) {
+        if (topOfStack == elements.length)
             elements = Arrays.copyOf(elements, elements.length + 10);
-        }
-        elements[endPlusOne] = e;
-        endPlusOne++;
+        elements[topOfStack++] = e;
     }
 
-
-    public E pop(){
-        endPlusOne--;
-        E result = elements[endPlusOne];
-        elements = Arrays.copyOfRange(elements, 0, endPlusOne);
-        return result;
+    public E pop() {
+        if (topOfStack < elements.length / 2)
+            elements = Arrays.copyOfRange(elements, 0, topOfStack);
+        return elements[--topOfStack];
     }
 
     public boolean isEmpty() {
-        return endPlusOne == 0;
+        return topOfStack == 0;
     }
 
 }

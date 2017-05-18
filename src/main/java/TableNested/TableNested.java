@@ -15,41 +15,36 @@ public class TableNested<K, V> {
     }
 
     public V get(K key) {
+        Entry currentEntry;
         for (int i = 0; i < entries.size(); i++) {
-            Entry currentEntry = entries.get(i);
-            K currentKey = currentEntry.getKey();
-            if (currentKey.equals(key)) {
-                Entry match = entries.get(i);
-                return match.getValue();
-            }
+            currentEntry = entries.get(i);
+            if (currentEntry.getKey().equals(key))
+                return currentEntry.getValue();
         }
         return null;
     }
 
-    public void put(K key, V value) {
-        boolean keyExistsAlready = false;
+    public boolean put(K key, V value) {
+        K currentKey;
         for (int i = 0; i < entries.size(); i++) {
-            if (entries.get(i).getKey().equals(key)) {
+            currentKey = entries.get(i).getKey();
+            if (currentKey.equals(key)) {
                 entries.set(i, new Entry(key, value));
-                keyExistsAlready = true;
+                return true;
             }
         }
-
-        if (!keyExistsAlready) {
-            Entry newEntry = new Entry(key, value);
-            entries.add(newEntry);
-        }
+        entries.add(new Entry(key, value));
+        return true;
     }
 
     public void remove(K key) {
+        K currentKey;
         for (int i = 0; i < entries.size(); i++) {
-            K currentKey = entries.get(i).getKey();
-            if (currentKey.equals(key)) {
+            currentKey = entries.get(i).getKey();
+            if (currentKey.equals(key))
                 entries.remove(i);
-            }
         }
     }
-
 
     class Entry {
         private K key;
