@@ -9,7 +9,31 @@ import java.util.Arrays;
  */
 public class GenericStack<E> {
     private E[] elements;
+    private int endPlusOne;
 
+    @SuppressWarnings("unchecked")
     public GenericStack() {
+        elements = (E[]) new Object[10];
+        endPlusOne = 0;
     }
+
+    public void push(E e){
+        if (endPlusOne == elements.length){
+            elements = Arrays.copyOf(elements, elements.length +5);
+        }
+        elements[endPlusOne] = e;
+        endPlusOne++;
+    }
+
+    public E pop(){
+        endPlusOne--;
+        E result = elements[endPlusOne];
+        elements = Arrays.copyOfRange(elements, 0, elements.length);
+        return result;
+    }
+
+    public boolean isEmpty(){
+        return endPlusOne == 0;
+    }
+
 }
