@@ -1,5 +1,6 @@
 package Pair;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -11,6 +12,30 @@ import java.util.Collections;
  * And a minmax method that returns a pair containing the largest and smallest items from the array list
  */
 public class Arrays {
-    public static <___> Pair<E> firstLast(ArrayList<___> a) {
+
+
+    public static <E> Pair<E> firstLast(ArrayList<E> a) {
+        E firstNum = a.get(0);
+        E secondNum = a.get(a.size() - 1);
+        return new Pair(firstNum, secondNum);
     }
+
+
+    public static<E> E min(ArrayList a) {
+        Collections.sort(a);
+        return (E) a.get(0);
+    }
+
+    public static <E> E  max(ArrayList a) {
+        Collections.sort(a);
+        return (E) a.get(a.size()-1);
+    }
+
+    public static <E extends Comparable> Pair<E> minMax(ArrayList<E> a) {
+        Collections.sort(a);
+        E firstNum = a.get(0);
+        E secondNum = a.get(a.size() - 1);
+        return new Pair(firstNum, secondNum);
+    }
+
 }
