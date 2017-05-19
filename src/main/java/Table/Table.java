@@ -10,8 +10,44 @@ import java.util.ArrayList;
  * Void return on `remove`.
  */
 public class Table<K, V> {
-    private ArrayList entries;
+
+    private ArrayList<Entry<K, V>> entries;
 
     public Table() {
+
+        entries = new ArrayList<>();
+    }
+
+
+    public V get(K key) {
+
+        for (Entry<K, V> entry : entries) {
+
+            if (entry.getKey().equals(key)) {
+                return entry.getValue();
+            }
+
+        }
+        return null;
+
+    }
+
+    public void put(K key, V value) {
+
+        remove(key);
+        Entry<K, V> newEntry = new Entry(key, value);
+
+        entries.add(newEntry);
+
+    }
+
+    public void remove(K key) {
+
+        for (int i=0; i < entries.size(); i++) {
+
+            if (entries.get(i).getKey().equals(key))
+                entries.remove(i);
+        }
+
     }
 }
