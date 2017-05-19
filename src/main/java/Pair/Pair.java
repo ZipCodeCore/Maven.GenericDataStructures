@@ -40,5 +40,5 @@ public class Pair<E extends Comparable> {
            return max = first;
         }
     }
-    
+
 }
