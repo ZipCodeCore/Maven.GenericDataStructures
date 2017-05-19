@@ -1,5 +1,4 @@
 package StackArrayList;
-
 import java.util.ArrayList;
 
 /**
@@ -7,10 +6,24 @@ import java.util.ArrayList;
  * If you pop on an empty stack, throw an IndexOutOfBoundsException.
  */
 public class Stack<E> {
-    private ArrayList elements;
+    private ArrayList<E> elements;
 
 
     public Stack(){
-
+        elements = new ArrayList<>();
     }
+
+    public void push(E e){
+        elements.add(0,e);
+    }
+
+    public E pop(){
+       return elements.remove(0);
+    }
+
+    public boolean isEmpty(){
+        return elements.isEmpty();
+    }
+
+
 }
