@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class TableNested<K, V> {
 
-    private ArrayList<Entry<K, V>> entries;
+    private ArrayList<Entry> entries;
 
     public TableNested() {
 
@@ -19,7 +19,7 @@ public class TableNested<K, V> {
 
     public V get(K key) {
 
-        for (Entry<K, V> entry : entries) {
+        for (Entry entry : entries) {
 
             if (entry.getKey().equals(key)) {
                 return entry.getValue();
@@ -33,7 +33,7 @@ public class TableNested<K, V> {
     public void put(K key, V value) {
 
         remove(key);
-        Entry<K, V> newEntry = new Entry(key, value);
+        Entry newEntry = new Entry(key, value);
 
         entries.add(newEntry);
 
