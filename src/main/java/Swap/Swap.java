@@ -11,3 +11,5 @@ public class Swap {
         return values;
     }
 }
+
+// ... allows you pass any number of objects to a specific type
