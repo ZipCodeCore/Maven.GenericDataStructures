@@ -13,5 +13,39 @@ public class Table<K, V> {
     private ArrayList entries;
 
     public Table() {
+        entries = new ArrayList<Entry>();
+    }
+
+    public V get(K key) {
+        for (int i = 0; i < entries.size(); i++) {
+            Entry holder = (Entry) entries.get(i);
+            if (key.equals(holder.getKey())) {
+                return (V) holder.getValue();
+            }
+        }
+        return null;
+    }
+
+    public void put(K key, V value) {
+
+        if (get(key) != null) {
+            for (int i = 0; i < entries.size(); i++) {
+                Entry holder = (Entry) entries.get(i);
+                if (key.equals(holder.getKey())) {
+                   entries.set(i, new Entry(key, value));
+                }
+            }
+        } else {
+            entries.add(new Entry(key, value));
+        }
+    }
+
+    public void remove(K key) {
+        for (int i = 0; i < entries.size(); i++) {
+            Entry holder = (Entry) entries.get(i);
+            if (key.equals(holder.getKey())) {
+                entries.remove(i);
+            }
+        }
     }
 }

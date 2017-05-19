@@ -12,7 +12,7 @@ public class GenericStack<E> {
     private E[] elements;
 
     public GenericStack() {
-        elements = (E[]) new Object[1];
+        elements = (E[]) new Object[10];
     }
 
     public void push(E item) {
