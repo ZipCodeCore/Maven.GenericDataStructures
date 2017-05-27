@@ -9,8 +9,30 @@ import java.util.Arrays;
  */
 public class ObjectStack<E> {
     private Object[] elements;
+    private int endOfArray;
 
     public ObjectStack() {
 
+        elements =new Object[10];
+        endOfArray=0;
+
+    }
+
+    public void push(Object item){
+        if(endOfArray==elements.length){
+            elements =Arrays.copyOf(elements,elements.length);
+        }
+        elements[endOfArray]= item;
+        endOfArray++;
+    }
+
+    public Object pop(){
+        endOfArray--;
+        return elements[endOfArray];
+    }
+
+    public boolean isEmpty(){
+
+        return endOfArray==0;
     }
 }
