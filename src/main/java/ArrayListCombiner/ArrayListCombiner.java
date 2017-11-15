@@ -12,12 +12,12 @@ import java.util.ArrayList;
 public class ArrayListCombiner<E> {
 
 
-    public static <E>void extendCombiner(ArrayList<E> list1, ArrayList<? extends E> list2) {
+    public static <E> void extendCombiner(ArrayList<E> list1, ArrayList<? extends E> list2) {
         list1.addAll(list2);
 
     }
 
-    public static <E>void superCombiner(ArrayList<? super E> list2, ArrayList<E> list1) {
+    public static <E> void superCombiner(ArrayList<? super E> list2, ArrayList<E> list1) {
         list2.addAll(list1);
 
     }

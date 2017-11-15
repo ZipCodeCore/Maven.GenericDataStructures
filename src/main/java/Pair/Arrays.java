@@ -15,7 +15,7 @@ public class Arrays<E extends Comparable> {
     E first;
     E second;
 
-    public Arrays(){
+    public Arrays() {
 
     }
 
@@ -23,34 +23,34 @@ public class Arrays<E extends Comparable> {
     public static <E extends Comparable> Pair<E> firstLast(ArrayList<E> a) {
         E first = a.get(0);
 
-        E last = a.get(a.size()-1);
+        E last = a.get(a.size() - 1);
 
-        Pair pair = new Pair(first,last);
+        Pair pair = new Pair(first, last);
 
-        return  pair;
+        return pair;
 
 
     }
 
     public static <E extends Comparable> E min(ArrayList<E> a) {
-      Collections.sort(a);
+        Collections.sort(a);
 
-      return a.get(0);
+        return a.get(0);
 
     }
 
     public static <E extends Comparable> E max(ArrayList<E> a) {
         Collections.sort(a);
 
-        return a.get(a.size()-1);
+        return a.get(a.size() - 1);
 
     }
 
-    public static <E extends Comparable>Pair<E> minMax(ArrayList<E> a) {
+    public static <E extends Comparable> Pair<E> minMax(ArrayList<E> a) {
         Collections.sort(a);
 
-         Pair pair = new Pair(a.get(0), a.get(a.size()-1));
-         return  pair;
+        Pair pair = new Pair(a.get(0), a.get(a.size() - 1));
+        return pair;
 
     }
 }

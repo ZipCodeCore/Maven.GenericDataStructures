@@ -16,38 +16,38 @@ import java.util.ArrayList;
  * remove which takes a key and removes it from the ArrayList if it's in there. It's a void method; no return type.
  */
 public class Table<K, V> {
-    private ArrayList<Entry<K, V>> entries= new ArrayList<>();
+    private ArrayList<Entry<K, V>> entries = new ArrayList<>();
 
-     Table() {
+    Table() {
 
     }
 
 
     public V get(K k) {
-        for (Entry<K,V> entry : entries)
+        for (Entry<K, V> entry : entries)
             if (entry.getKey().equals(k)) {
                 return entry.getValue();
             }
 
-            return null;
+        return null;
 
 
     }
 
     public void put(K k, V v) {
-        for(Entry<K,V> entry : entries)
+        for (Entry<K, V> entry : entries)
             if (entry.getKey().equals(k)) {
                 entry.setValue(v);
             }
 
-        entries.add(new Entry<>(k,v));
+        entries.add(new Entry<>(k, v));
 
     }
 
     public void remove(K k) {
-        Entry<K,V> toRemove = null;
-        for (Entry<K,V> entry : entries)
-            if(entry.getKey().equals(k))
+        Entry<K, V> toRemove = null;
+        for (Entry<K, V> entry : entries)
+            if (entry.getKey().equals(k))
                 toRemove = entry;
 
         entries.remove(toRemove);
@@ -55,5 +55,5 @@ public class Table<K, V> {
     }
 
 
-    }
+}
 
