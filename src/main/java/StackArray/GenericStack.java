@@ -10,14 +10,14 @@ public class GenericStack<E> {
 
     private E[] elements;
 
-
-    public GenericStack() {
-        this(null);
-    }
-
     public GenericStack(E[] elements) {
         this.elements = elements;
     }
+
+    public GenericStack() {
+        this.elements = null;
+    }
+
 
     public void push(E element){
         if(elements == null) {
