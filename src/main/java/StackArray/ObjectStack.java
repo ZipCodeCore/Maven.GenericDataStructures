@@ -11,6 +11,21 @@ public class ObjectStack<E> {
     private Object[] elements;
 
     public ObjectStack() {
+        elements = new Object[0];
+    }
 
+    public void push(Object element){
+        elements = Arrays.copyOf(elements,elements.length+1);
+        elements[elements.length-1] = element;
+    }
+
+    public Object pop() throws IndexOutOfBoundsException{
+        Object returnElement = elements[elements.length-1];
+        elements = Arrays.copyOf(elements,elements.length-1);
+        return returnElement;
+    }
+
+    public boolean isEmpty(){
+        return elements.length == 0;
     }
 }
