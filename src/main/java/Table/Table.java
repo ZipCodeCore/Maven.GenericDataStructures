@@ -54,12 +54,6 @@ public class Table<K, V> {
 
     }
 
-    public static void main(String[] args) {
-        Table<String, Integer> table = new Table<String, Integer>();
-        table.put("Abrar", 1);
-        System.out.println(1);
-        System.out.println(table.get("Abrar"));
-    }
 
     }
 
