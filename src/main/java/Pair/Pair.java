@@ -7,6 +7,40 @@ package Pair;
  * min -> returns the minimum of the pair
  * max -> returns the maximum of the pair
  */
-public class Pair {
+public class Pair <E extends Comparable> {
+
+    private E first;
+    private E second;
+
+    Pair(E first, E second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public E getFirst() {
+        return first;
+    }
+
+    public E getSecond() {
+        return second;
+    }
+
+    public E min() {
+        E smaller = second;
+        if(first.compareTo(second) < 0) {
+            smaller = first;
+        }
+        return smaller;
+    }
+
+    public E max() {
+        E larger = second;
+        if(first.compareTo(second) > 0) {
+            larger = first;
+        }
+        return larger;
+    }
+
+
 
 }

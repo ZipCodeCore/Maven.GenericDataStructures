@@ -11,5 +11,28 @@ public class GenericStack<E> {
     private E[] elements;
 
     public GenericStack() {
+        elements = (E[]) new Object[0];
+    }
+
+    public void push(E element) {
+        int arrayLength = elements.length;
+        elements = Arrays.copyOf(elements, arrayLength + 1);
+        elements[arrayLength] = element;
+    }
+
+    public E pop() {
+        int arrayLength = elements.length;
+        E element = elements[arrayLength - 1];
+        elements = Arrays.copyOf(elements, arrayLength - 1);
+        return element;
+    }
+
+    public boolean isEmpty() {
+        if(elements.length == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
