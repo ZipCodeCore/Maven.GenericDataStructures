@@ -1,6 +1,7 @@
 package MapFunc;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -9,4 +10,14 @@ import java.util.function.Function;
  */
 public class MapFunc {
 
+public static <T,R> ArrayList<R> map(List<T> item, Function<T,R> function){
+    ArrayList<R> result = new ArrayList<R>();
+
+    for(T t: item){
+        result.add(function.apply(t));
+    }
+
+    return result;
+
+}
 }
