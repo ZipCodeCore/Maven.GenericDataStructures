@@ -46,12 +46,12 @@ public class Table<K, V> {
     }
 
     public void remove(K key){
-        Entry<K, V> entry = getEntry(key);
-        entries.remove(entry);
-//        for(Entry entry: entries){
-//            if(entry.getKey().equals(key)){
-//                entries.remove(entry);
-//            }
-//        }
+      //  Entry<K, V> entry = getEntry(key);
+       // entries.remove(entry);
+        for(Entry entry: entries){
+            if(entry.getKey().equals(key)){
+                entries.remove(entry);
+            }
+        }
     }
 }
