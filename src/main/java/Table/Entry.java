@@ -1,8 +1,12 @@
 package Table;
 
+import java.util.ArrayList;
+
 public class Entry<K, V> {
     private K key;
     private V value;
+
+    public Entry() { }
 
     public Entry(K key, V value) {
         this.key = key;
