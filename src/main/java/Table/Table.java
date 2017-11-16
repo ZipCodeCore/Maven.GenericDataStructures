@@ -16,35 +16,50 @@ public class Table<K, V> {
         entries = new ArrayList<>();
     }
 
-    public Entry<K, V> getEntry(K key) {
-        for (Entry<K, V> aEntry : entries){
-            if(aEntry.getKey().equals(key)){
-                return aEntry;
-            }
-        }
-        return null;
-    }
+//    public Entry<K, V> getEntry(K key) {
+//        for (Entry<K, V> aEntry : entries){
+//            if(aEntry.getKey().equals(key)){
+//                return aEntry;
+//            }
+//        }
+//        return null;
+//    }
 
     public V get(K key) {
-        Entry<K, V> entryToGet = getEntry(key);
-        if (entryToGet == null) {
+//        Entry<K, V> entryToGet = getEntry(key);
+//        if (entryToGet == null) {
+//            return null;
+//        }
+//        return entryToGet.getValue();
+
+        for (Entry<K, V> entry: entries)
+            if(entry.getKey().equals(key)) {
+                return entry.getValue();
+            }
             return null;
-        }
-        return entryToGet.getValue();
     }
 
     public void put(K key, V value) {
-        Entry<K, V> entry = getEntry(key);
-        entries.remove(entry);
-        if (entry == null) {
-            entry = new Entry<>(key, value);
-        }
-        entry.setValue(value);
-        entries.add(entry);
+//        Entry<K, V> entry = getEntry(key);
+//        entries.remove(entry);
+//        if (entry == null) {
+//            entry = new Entry<>(key, value);
+//        }
+//        entry.setValue(value);
+//        entries.add(entry);
+
+        for (Entry<K, V> entry : entries)
+            if (entry.getKey().equals(key)){
+            entry.setValue(value);
+            }
+            entries.add(new Entry<>(key, value));
     }
 
     public void remove(K key) {
-        Entry<K, V> entry = getEntry(key);
-        entries.remove(entry);
+        Entry<K, V> removableEntry = null;
+        for (Entry<K, V> entry : entries)
+            if (entry.getKey().equals(key))
+                removableEntry = entry;
+                entries.remove(removableEntry);
     }
 }

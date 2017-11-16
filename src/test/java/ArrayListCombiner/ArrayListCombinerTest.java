@@ -39,7 +39,6 @@ public class ArrayListCombinerTest {
         ArrayList<Manager> second = new ArrayList<>();
         second.add(bar);
 
-        ArrayList<Janitor> janitors = new ArrayList<>();
         // When  I combine them
         ArrayListCombiner.superCombiner(first, second);
         // Then I should get an arrayList with both

@@ -32,13 +32,19 @@ public class TableNested<K, V> {
 
 
     public void put(K key, V value) {
-        Entry entry = getEntry(key);
-        entries.remove(entry);
-        if (entry == null) {
-            entry = new Entry(key, value);
-        }
-        entry.setValue(value);
-        entries.add(entry);
+//        Entry entry = getEntry(key);
+//        entries.remove(entry);
+//        if (entry == null) {
+//            entry = new Entry(key, value);
+//        }
+//        entry.setValue(value);
+//        entries.add(entry);
+
+        for (Entry check : entries)
+            if (check.getKey().equals(key)){
+            check.setValue(value);
+            }
+            entries.add(new Entry(key, value));
     }
 
     public void remove(K key) {

@@ -12,15 +12,15 @@ import java.util.stream.Collectors;
  */
 public class MapFunc {
 
-    public static <T, R> ArrayList<R> map (List<T> arrayList, Function<T, R> function) {
-        ArrayList<R> newList;
-        newList = (ArrayList<R>) arrayList.stream().map(a-> function.apply(a)).collect(Collectors.toList());
-
-
-
-
-        ArrayList<R> rs = arrayList.stream().map(function::apply).collect(Collectors.toCollection(ArrayList::new));
-        newList = rs;
+    public static <T, R> ArrayList<R> map (ArrayList<T> arrayList, Function<T, R> function) {
+//        ArrayList<R> newList;
+//        newList = (ArrayList<R>) arrayList.stream().map(a-> function.apply(a)).collect(Collectors.toList());
+//
+//
+//
+//
+//        ArrayList<R> rs = arrayList.stream().map(function::apply).collect(Collectors.toCollection(ArrayList::new));
+//        newList = rs;
 
 
 
@@ -33,7 +33,7 @@ public class MapFunc {
         }
 
 
-        return newList;
+        return a;
     }
 
 
