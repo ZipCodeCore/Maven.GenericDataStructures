@@ -1,5 +1,6 @@
 package StackArray;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -11,6 +12,25 @@ public class ObjectStack<E> {
     private Object[] elements;
 
     public ObjectStack() {
+        elements = (Object[])(new ArrayList<Object>()).toArray();
 
+    }
+
+    public boolean isEmpty() {
+        if (elements.length == 0) {
+            return true;
+        } else {
+            return false;}
+    }
+
+    public void push(E element) {
+        elements = Arrays.copyOf(elements,elements.length + 1);
+        elements[elements.length - 1] = element;
+    }
+
+    public Object pop() {
+        Object returnElements = elements[elements.length - 1];
+        elements = Arrays.copyOf(elements,elements.length - 1);
+        return returnElements;
     }
 }
