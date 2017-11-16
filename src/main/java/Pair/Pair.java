@@ -18,22 +18,22 @@ public class Pair<E extends Comparable> {
     }
 
     public E min() {
-        int comparisionValue = first.compareTo(second);
-        if (comparisionValue < 0) {
+   
+        if (first.compareTo(second) < 0) {
             return first;
         }
-        else if (comparisionValue > 0) {
+        else if (first.compareTo(second) > 0) {
             return second;
         }
         return null;
     }
 
     public E max() {
-        int comparisionValue = first.compareTo(second);
-        if (comparisionValue > 0) {
+
+        if (first.compareTo(second) > 0) {
             return first;
         }
-        else if (comparisionValue < 0) {
+        else if (first.compareTo(second) < 0) {
             return second;
         }
         return null;

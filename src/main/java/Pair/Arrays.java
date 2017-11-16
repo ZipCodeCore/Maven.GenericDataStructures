@@ -13,8 +13,8 @@ import java.util.Comparator;
  */
 public class Arrays {
     public static <E extends Comparable> Pair<E> firstLast(ArrayList<E> arrayList) {
-        Pair<E> pair = new Pair<E>(arrayList.get(0), arrayList.get(arrayList.size() - 1));
-        return pair;
+        Pair<E> firstLastPair = new Pair<E>(arrayList.get(0), arrayList.get(arrayList.size() - 1));
+        return firstLastPair;
     }
 
     public static <E extends Comparable> E min(ArrayList<E> arrayList) {
@@ -30,7 +30,7 @@ public class Arrays {
     public static <E extends Comparable> Pair<E> minMax(ArrayList<E> arrayList) {
         E min = Arrays.min(arrayList);
         E max = Arrays.max(arrayList);
-        Pair<E> pair = new Pair<>(min, max);
-        return pair;
+        Pair<E> minMaxPair = new Pair<>(min, max);
+        return minMaxPair;
     }
 }
