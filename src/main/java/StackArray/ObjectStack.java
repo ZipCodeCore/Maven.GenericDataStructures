@@ -8,9 +8,23 @@ import java.util.Arrays;
  * @param <E>
  */
 public class ObjectStack<E> {
-    private Object[] elements;
+    private Object[] elements= new Object[0];
 
     public ObjectStack() {
 
+    }
+    public void push(Object element){
+        elements= Arrays.copyOf(elements,elements.length+1);
+        elements[elements.length-1]=element;
+    }
+    public Object pop(){
+        if(elements.length != 0) {
+            Object last = elements[elements.length-1];
+            elements = Arrays.copyOf(elements, elements.length - 1);
+            return last;
+        } else throw new IndexOutOfBoundsException();
+    }
+    public boolean isEmpty(){
+        return elements.length==0;
     }
 }
