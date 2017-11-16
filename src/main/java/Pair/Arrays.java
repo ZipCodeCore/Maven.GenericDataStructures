@@ -20,12 +20,14 @@ public class Arrays {
     }
 
     public static <E extends Comparable> E min(ArrayList<E> a){
-        a.sort(Comparator.naturalOrder());
+       // a.sort(Comparator.naturalOrder());
+        Collections.sort(a);
         return a.get(0);
     }
 
     public static <E extends Comparable> E max(ArrayList<E> a){
-        a.sort(Comparator.reverseOrder());
+       // a.sort(Comparator.reverseOrder());
+        Collections.reverse(a);
         return a.get(0);
     }
 

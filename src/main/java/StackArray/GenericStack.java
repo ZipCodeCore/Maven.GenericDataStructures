@@ -15,7 +15,7 @@ public class GenericStack<E> {
     }
 
     public GenericStack() {
-        this.elements = null;
+        this(null);
     }
 
 

@@ -14,11 +14,7 @@ public class MapFunc<T, R> {
 
     public static <T,R>  ArrayList map(ArrayList<T> arrayList, Function<T,R> function){
 
-        ArrayList<R> mapped = new ArrayList<>();
-        for (T t : arrayList) {
-            R apply = function.apply(t);
-            mapped.add(apply);
-        }
+        ArrayList<R> mapped = arrayList.stream().map(function::apply).collect(Collectors.toCollection(ArrayList::new));
 
 
         return mapped;
