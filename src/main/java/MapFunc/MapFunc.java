@@ -1,6 +1,7 @@
 package MapFunc;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -8,5 +9,12 @@ import java.util.function.Function;
  * and returns an ArrayList with all of the elements of the first after the function is applied to them.
  */
 public class MapFunc {
+    public static <T,R> ArrayList<R> map(List<T> arrayList, Function<T,R> obj){
+        ArrayList<R> rArrayList = new ArrayList<>();
+        for (T type: arrayList) {
+           rArrayList.add(obj.apply(type));
+        }
+    return rArrayList;
+    }
 
 }

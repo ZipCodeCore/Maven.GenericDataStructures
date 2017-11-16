@@ -1,6 +1,8 @@
 package StackArray;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Set;
 
 /**
  * Expand the ArrayList implementation of stack here to use an E[] array.  Still implement push, pop, and isEmpty.
@@ -8,8 +10,28 @@ import java.util.Arrays;
  * @param <E>
  */
 public class GenericStack<E> {
+    int array;
+    Object[] objArray = new Object[0];
     private E[] elements;
 
     public GenericStack() {
+        elements = (E[]) new Object[0];
+    //elements = (E[]) new ArrayList<E>().toArray();
+    }
+    public void push(E element){
+       elements = Arrays.copyOf(elements,elements.length+1);
+       elements[elements.length-1] = element;
+    }
+    public E pop(){
+        if(elements.length!=0) {
+            E temp = elements[elements.length - 1];
+            elements =Arrays.copyOf(elements,elements.length-1);
+            return temp;
+        }
+        else
+            throw new IndexOutOfBoundsException();
+    }
+    public boolean isEmpty(){
+        return elements.length==0;
     }
 }
