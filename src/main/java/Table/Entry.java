@@ -10,6 +10,7 @@ public class Entry<K, V> {
     }
 
     public K getKey() {
+
         return key;
     }
 
@@ -17,4 +18,7 @@ public class Entry<K, V> {
         return value;
     }
 
+    public void setValue(V value) {
+        this.value = value;
+    }
 }
