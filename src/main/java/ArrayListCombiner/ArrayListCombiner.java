@@ -1,5 +1,6 @@
 package ArrayListCombiner;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -9,4 +10,12 @@ import java.util.ArrayList;
  * The second method should be called superCombiner and should use ? super E
  */
 public class ArrayListCombiner {
+
+
+    public static <E> void extendCombiner(ArrayList<E> a, ArrayList<? extends E> b){
+        a.addAll(b);
+    }
+    public static <E> void superCombiner(ArrayList<? super E> a , ArrayList<E> b){
+        a.addAll(b);
+    }
 }
