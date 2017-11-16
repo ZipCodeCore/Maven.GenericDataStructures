@@ -1,5 +1,6 @@
 package Table;
 
+import java.security.KeyStore;
 import java.util.ArrayList;
 
 /**
@@ -10,8 +11,39 @@ import java.util.ArrayList;
  * Void return on `remove`.
  */
 public class Table<K, V> {
-    private ArrayList entries;
+    private ArrayList<Entry<K, V>> entries;
 
     public Table() {
+        entries = new ArrayList<>();
+    }
+
+    public Entry getEntry(K key) {
+        Entry<K, V> entry = null;
+        for(Entry<K, V> entryName: entries){
+            if (key.equals(entryName.getKey())){
+                entry = entryName;
+            }
+        }
+        return entry;
+    }
+
+    public V get(K key){
+       Entry<K, V> entry = getEntry(key);
+       V value = null;
+       if (entry == null) {
+            return null;
+       }
+       value = entry.getValue();
+        return value;
+    }
+
+    public void put(K key, V value){
+        Entry<K, V> entry = new Entry<>(key, value);
+        entries.add(entry);
+    }
+
+    public void remove(K key){
+        Entry<K, V> entryRemoved = getEntry(key);
+        entries.remove(entryRemoved);
     }
 }
