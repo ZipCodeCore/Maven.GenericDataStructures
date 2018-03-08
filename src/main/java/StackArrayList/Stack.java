@@ -11,6 +11,20 @@ public class Stack<E> {
 
 
     public Stack(){
+        elements = new ArrayList<>();
+    }
 
+    public void push(E value){
+        elements.add(value);
+    }
+
+    public E pop(){
+        E value = (E) elements.get(elements.size() -1);
+        elements.remove(elements.size() -1);
+        return value;
+    }
+
+    public boolean isEmpty(){
+        return elements.isEmpty();
     }
 }
