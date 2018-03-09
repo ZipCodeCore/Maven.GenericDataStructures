@@ -1,10 +1,10 @@
 //package MapFunc;
 //
 //import MapFunc.MapFunc;
-//import org.junit.Test;
+//        import org.junit.Test;
 //
-//import java.util.ArrayList;
-//import org.junit.Assert;
+//        import java.util.ArrayList;
+//        import org.junit.Assert;
 //
 //public class MapFuncTest {
 //    @Test
