@@ -1,5 +1,5 @@
-public class Stack{
-    public boolean isEmpty(){
-        return false;
-    }
-}
+//public class Stack <E>{
+//    public boolean isEmpty(){
+//        return false;
+//    }
+//}

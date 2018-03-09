@@ -8,14 +8,21 @@ import java.util.Stack;
  * Remember, you might need to resize the stack in the push method.
  * @param <E>
  */
-public class GenericStack<E> extends Stack<E> {
+public class GenericStack<E> {
     private E[] elements;
+
+    GenericStack<String> myStack = new GenericStack<>();
 
     public GenericStack() {
     }
 
-    @Override
-    public synchronized boolean isEmpty() {
-        return super.isEmpty();
+    public E isEmpty() {
+
+    }
+
+    public void push(E foobar) {
+    }
+
+    public E pop() {
     }
 }
