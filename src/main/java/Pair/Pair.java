@@ -11,9 +11,9 @@ public class Pair <E extends Comparable>{
     private E first;
     private E second;
 
-    public Pair(E foo, E bar){
-        this.first = foo;
-        this.second = bar;
+    public Pair(E eh, E ah){
+        this.first = eh;
+        this.second = ah;
     }
 
     public E getFirst() {
