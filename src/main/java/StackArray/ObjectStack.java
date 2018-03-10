@@ -8,9 +8,29 @@ import java.util.Arrays;
  * @param <E>
  */
 public class ObjectStack<E> {
-    private Object[] elements;
+    private Object[] elements = new Object[2];
+    private int size = 0;
 
     public ObjectStack() {
 
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public void push(E foobar) {
+        if(elements.length == size){
+            elements = Arrays.copyOf(elements, size+5);
+        }
+        elements[size]= foobar;
+        size++;
+    }
+
+    public E pop() {
+        E obj = (E) elements[size-1];
+        elements[size-1]= null;
+        size--;
+        return obj;
     }
 }
