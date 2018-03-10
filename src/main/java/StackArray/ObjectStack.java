@@ -9,8 +9,31 @@ import java.util.Arrays;
  */
 public class ObjectStack<E> {
     private Object[] elements;
+    private int stackSize;
+    private int topStack;
 
     public ObjectStack() {
-
+        tempArray(10);
+    }
+    private void tempArray(Integer length){
+        this.stackSize = length;
+        elements = new Object[length];
+    }
+    public void push(Object element){
+        if (topStack <= stackSize){
+            elements[topStack] = element;
+            topStack++;
+        }
+    }
+    public Object pop(){
+        Object element = elements[topStack - 1];
+        topStack--;
+        return element;
+    }
+    public boolean isEmpty(){
+        if (topStack == 0){
+            return true;
+        }
+        return false;
     }
 }
