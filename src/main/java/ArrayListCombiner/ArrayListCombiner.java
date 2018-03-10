@@ -11,36 +11,13 @@ import java.util.ArrayList;
  * The first method should be called extendCombiner and should use ? extends E
  * The second method should be called superCombiner and should use ? super E
  */
-public class ArrayListCombiner<T> extends Manager {
+public class ArrayListCombiner<E> {
 
-    private ArrayList<Employee> employees;
-    private ArrayList<Manager> managers;
-
-    public ArrayList<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(ArrayList<Employee> employees) {
-        this.employees = employees;
-    }
-
-    public ArrayList<Manager> getManagers() {
-        return managers;
-    }
-
-    public void setManagers(ArrayList<Manager> managers) {
-        this.managers = managers;
-    }
-
-    public ArrayListCombiner(String name, double salary) {
-        super(name, salary);
-    }
-
-    public static void extendCombiner(ArrayList<Employee> first, ArrayList<Manager> second) {
+    public static <E> void extendCombiner(ArrayList<E> first, ArrayList<? extends E> second) {
         first.addAll(second);
     }
 
-    public static void superCombiner(ArrayList<Employee> first, ArrayList<Manager> second) {
+    public static<E>void superCombiner(ArrayList<? super E> first, ArrayList<E> second) {
         first.addAll(second);
     }
 }
