@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class Table<K, V> {
     private ArrayList entries;
+    Table table;
 
-    public Table() {
-    }
+
 }
