@@ -9,4 +9,14 @@ import java.util.function.Function;
  */
 public class MapFunc {
 
+    public static <T,R> ArrayList map(ArrayList<T> list, Function<T, R> function){
+
+        ArrayList<R> newList = new ArrayList<>();
+
+        for(int i = 0; i < list.size(); i++){
+            R combine = function.apply(list.get(i));
+            newList.add(combine);
+        }
+        return newList;
+    }
 }
