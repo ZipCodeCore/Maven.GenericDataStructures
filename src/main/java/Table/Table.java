@@ -28,13 +28,13 @@ public class Table<K, V> {
     public void put(K key, V value) {
         for(int i = 0; i < entries.size(); i++){
             if(entries.get(i).getKey().equals(key)){
-                entries.add(new Entry<K, V>(key, value));
+                entries.add(new Entry<>(key, value));
                 entries.remove(i);
                 break;
 
             }
         }
-        entries.add(new Entry<K, V> (key, value));
+        entries.add(new Entry<> (key, value));
     }
 
     public void remove(K key) {

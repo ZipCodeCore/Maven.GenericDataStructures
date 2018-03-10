@@ -35,7 +35,7 @@ public class TableNested<K, V> {
 
     public void remove(K key) {
         for(int i = 0; i < entries.size(); i++){
-            if(entries.get(i).equals(key)){
+            if(entries.get(i).getKey().equals(key)){
                 entries.remove(i);
             }
         }

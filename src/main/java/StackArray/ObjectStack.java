@@ -15,9 +15,8 @@ public class ObjectStack<E> {
 
     }
 
-
     public boolean isEmpty() {
-        return size == 0;
+        return this.elements.length == 0;
     }
 
     public void push(Object element) {
