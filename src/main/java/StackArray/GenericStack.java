@@ -10,6 +10,27 @@ import java.util.Arrays;
 public class GenericStack<E> {
     private E[] elements;
 
+    public GenericStack(int n) {
+        this.elements = (E[]) new Object[n];
+    }
+
     public GenericStack() {
+        this(0);
+    }
+
+    public void push(E jawn){
+        this.elements = Arrays.copyOf(this.elements, this.elements.length + 1);
+        this.elements[elements.length-1] = jawn;
+    }
+
+    public E pop() throws IndexOutOfBoundsException{
+        E temp = this.elements[this.elements.length-1];
+        this.elements = Arrays.copyOf(this.elements, this.elements.length - 1);
+        return temp;
+    }
+
+    public boolean isEmpty(){
+        if (this.elements.length == 0) return true;
+        return false;
     }
 }

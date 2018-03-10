@@ -10,7 +10,27 @@ import java.util.Arrays;
 public class ObjectStack<E> {
     private Object[] elements;
 
-    public ObjectStack() {
+    public ObjectStack(int n) {
+        this.elements = new Object[n];
+    }
 
+    public ObjectStack() {
+        this(0);
+    }
+
+    public void push(Object jawn){
+        this.elements = Arrays.copyOf(this.elements, this.elements.length + 1);
+        this.elements[elements.length-1] = jawn;
+    }
+
+    public Object pop() throws IndexOutOfBoundsException{
+        Object temp = this.elements[this.elements.length-1];
+        this.elements = Arrays.copyOf(this.elements, this.elements.length - 1);
+        return temp;
+    }
+
+    public boolean isEmpty(){
+        if (this.elements.length == 0) return true;
+        return false;
     }
 }

@@ -10,7 +10,30 @@ import java.util.Collections;
  * A max method that returns the largest item in the arraylist
  * And a minmax method that returns a pair containing the largest and smallest items from the array list
  */
-public class Arrays {
-    public static <___> Pair<E> firstLast(ArrayList<___> a) {
+public class Arrays{
+    public static <E extends Comparable> Pair firstLast(ArrayList<E> input) {
+        E first = input.get(0);
+        E last = input.get(input.size()-1);
+        return new Pair(first, last);
+    }
+
+    public static <E extends Comparable> E min(ArrayList<E> input){
+        E minimum = input.get(0);
+        for (E jawn:input){
+            if (jawn.compareTo(minimum) < 0) minimum = jawn;
+        }
+        return minimum;
+    }
+
+    public static <E extends Comparable> E max(ArrayList<E> input){
+        E maximum = input.get(0);
+        for (E jawn:input){
+            if (jawn.compareTo(maximum) > 0) maximum = jawn;
+        }
+        return maximum;
+    }
+
+    public static <E extends Comparable> Pair<E> minMax(ArrayList<E> input){
+        return new Pair<E>(Arrays.min(input), Arrays.max(input));
     }
 }
