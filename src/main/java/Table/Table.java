@@ -10,38 +10,51 @@ import java.util.ArrayList;
  * Void return on `remove`.
  */
 public class Table<K, V> {
-    private ArrayList entries;
+    private ArrayList<Entry<K, V>> entries;
 
     public Table() {
-        this.entries = new ArrayList<Entry<K,V>>();
+        this.entries = new ArrayList<>();
     }
 
-    public Entry<K,V> get(K key){
-        Entry enter = null;
-        for(int i = 0; i<entries.size(); i++){
-            Entry temp = (Entry) entries.get(i);
-            if(entries.contains(temp.getKey())){
-                enter = temp;
-            }
-        }
-        return enter;
+    public ArrayList<Entry<K, V>> getEntries() {
+        return entries;
     }
 
-    public void put(K key, V value){
-        for(int i = 0; i<entries.size(); i++){
-            Entry enter = (Entry) entries.get(i);
-            if(!enter.getKey().equals(key)){
-//                entries.add((entries.size()-1),(key,value));
+    public V get(K key) {
+        V value = null;
+        for (int i = 0; i < entries.size(); i++) {
+            K entryKey = entries.get(i).getKey();
+            if (entryKey.equals(key)) {
+                value = entries.get(i).getValue();
+            }
+        }
+        return value;
+    }
+    public int size(){
+        return entries.size();
+    }
+
+    public void put(K key, V value) {
+        entries.add(new Entry<>(key,value));
+    //not sure why the for loop won't work but I'll come back to that later
+/*       for (int i = 0; i < entries.size(); i++) {
+            K entryKey = entries.get(i).getKey();
+            if ((entries.get(i).getKey()).equals(key)) {
+                entries.set(i, new Entry<>(key,value));
+            } else {
+                entries.add(i, new Entry<>(key,value));
+            }
+        }
+*/
+    }
+
+    public void remove(K key) {
+        for (int i = 0; i < entries.size(); i++) {
+            K entryKey = entries.get(i).getKey();
+            if (entryKey.equals(key)) {
+                entries.remove(i);
             }
         }
     }
 
-    public void remove(K key){
-        for(int i = 0; i<entries.size(); i++){
-            Entry temp = (Entry) entries.get(i);
-            if(entries.contains(temp.getKey())){
-                temp = null;
-            }
-        }
-    }
 }

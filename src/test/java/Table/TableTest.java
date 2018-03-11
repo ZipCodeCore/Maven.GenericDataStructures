@@ -12,6 +12,7 @@ public class TableTest {
         Assert.assertEquals(table.get("foo"), null);
     }
 
+
     @Test
     public void testPutAnItemReturnsAndDoesNotDelete() throws Exception {
         //Given an empty table
