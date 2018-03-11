@@ -17,7 +17,6 @@ public class GenericStack<E> {
     public void push(E element){
         elements= Arrays.copyOf(elements,elements.length+1);
         elements[elements.length-1]=element;
-        elements=elements;
     }
     public E pop(){
         E elementPoppded = elements[elements.length-1];
