@@ -1,7 +1,5 @@
 package StackArray;
 
-
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -25,7 +23,7 @@ public class GenericStack<E> {
 
     }
 
-    public E pop() {
+    public E pop() throws IndexOutOfBoundsException{
         int last = elements.length-1;
         E  poppedElement= elements[last];
         E[] newArray = Arrays.copyOf(elements, last);
@@ -33,7 +31,7 @@ public class GenericStack<E> {
         return poppedElement;
     }
 
-    public boolean isEmpty() {
+    public boolean isEmpty() throws IndexOutOfBoundsException{
         return elements.length == 0;
     }
 
