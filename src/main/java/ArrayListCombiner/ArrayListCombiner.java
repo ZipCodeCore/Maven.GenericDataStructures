@@ -19,6 +19,8 @@ public class ArrayListCombiner {
 
     public static<E> ArrayList extendCombiner(ArrayList<E> first, ArrayList<? extends E>second){
         first.addAll(second);
+
+
         return first;
     }
 
