@@ -33,4 +33,4 @@ public class MapFuncTest {
         Assert.assertEquals("2", mappedList.get(1));
     }
 
-//}
+}
