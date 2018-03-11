@@ -8,12 +8,12 @@ package Pair;
  * min -> returns the minimum of the pair
  * max -> returns the maximum of the pair
  */
-public class Pair<E extends Comparable<E>> implements Comparable<E>{
+public class Pair<E extends Comparable<E>> implements Comparable<E> {
 
     private E first;
     private E second;
 
-    public Pair(E first, E second){
+    public Pair(E first, E second) {
         this.first = first;
         this.second = second;
 
@@ -27,21 +27,21 @@ public class Pair<E extends Comparable<E>> implements Comparable<E>{
         return this.second;
     }
 
-    public E  min() {
-        if (compareTo(second) < 0){
+    public E min() {
+        if (compareTo(second) < 0) {
             return this.first;
 
-        } else if (compareTo(second) > 0){
+        } else if (compareTo(second) > 0) {
             return this.second;
         }
         return null;
     }
 
-    public E max(){
-        if (compareTo(second) < 0){
+    public E max() {
+        if (compareTo(second) < 0) {
             return this.second;
 
-        } else if (compareTo(second) > 0){
+        } else if (compareTo(second) > 0) {
             return this.first;
         }
         return null;

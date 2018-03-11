@@ -23,7 +23,6 @@ public class MapFunc {
        because the function uses T for the type being passed in. Then R for the return type.
        The method then returns ArrayList of type R because this is the array that had the function applied to it.
        The argument being passed in is of type T being the original array being passed into the function.
-
      */
 }
 

@@ -17,9 +17,9 @@ public class Table<K, V> {
     }
 
     public V get(K key) {
-        for (Entry entry : entries){
-            if (entry.getKey().equals(key)){
-               return (V) entry.getValue();
+        for (Entry entry : entries) {
+            if (entry.getKey().equals(key)) {
+                return (V) entry.getValue();
 
             }
         }
@@ -27,7 +27,7 @@ public class Table<K, V> {
     }
 
     public void put(K key, V value) {
-        for(Entry entry : entries){
+        for (Entry entry : entries) {
             entry.setKey(key);
             entry.setValue(value);
             return;
@@ -37,8 +37,8 @@ public class Table<K, V> {
     }
 
     public void remove(K key) {
-        for(Entry entry : entries){
-            if (key.equals(entry.getKey())){
+        for (Entry entry : entries) {
+            if (key.equals(entry.getKey())) {
                 entries.remove(entry);
                 return;
             }

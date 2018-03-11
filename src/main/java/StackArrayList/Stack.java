@@ -11,7 +11,7 @@ public class Stack<E> {
 
     private ArrayList elements;
 
-    public Stack(){
+    public Stack() {
         this.elements = new ArrayList();
     }
 
@@ -24,9 +24,9 @@ public class Stack<E> {
         return this.elements.isEmpty();
     }
 
-    public E pop() throws IndexOutOfBoundsException{
+    public E pop() throws IndexOutOfBoundsException {
         Collections.reverse(this.elements);
-        E element = (E )this.elements.remove( 0);
+        E element = (E) this.elements.remove(0);
         return element;
     }
 }
