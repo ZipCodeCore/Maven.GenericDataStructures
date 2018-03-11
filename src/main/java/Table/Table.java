@@ -13,5 +13,35 @@ public class Table<K, V> {
     private ArrayList entries;
 
     public Table() {
+        this.entries = new ArrayList<Entry<K,V>>();
+    }
+
+    public Entry<K,V> get(K key){
+        Entry enter = null;
+        for(int i = 0; i<entries.size(); i++){
+            Entry temp = (Entry) entries.get(i);
+            if(entries.contains(temp.getKey())){
+                enter = temp;
+            }
+        }
+        return enter;
+    }
+
+    public void put(K key, V value){
+        for(int i = 0; i<entries.size(); i++){
+            Entry enter = (Entry) entries.get(i);
+            if(!enter.getKey().equals(key)){
+//                entries.add((entries.size()-1),(key,value));
+            }
+        }
+    }
+
+    public void remove(K key){
+        for(int i = 0; i<entries.size(); i++){
+            Entry temp = (Entry) entries.get(i);
+            if(entries.contains(temp.getKey())){
+                temp = null;
+            }
+        }
     }
 }
