@@ -24,24 +24,23 @@ public class Arrays {
     }
 
     public static <E> E min(ArrayList<E> a) {
-        E temp = null;
-        E min = null;
+        E min = a.get(0);
         Pair<E> thePair;
-        for (int i = 0; i < a.size() - 1; i++) {
-            thePair = new Pair<E>(a.get(i), a.get(i + 1));
-              temp = thePair.min();
-              
+        for (int i = 1; i < a.size(); i++) {
+            thePair = new Pair<E>(min, a.get(i));
+            min = thePair.min();
+
         }
         return min;
     }
 
     public static <E> E max(ArrayList<E> a) {
 
-        E max = null;
+        E max = a.get(0);
         Pair<E> thePair;
-        for (int i = 0; i < a.size() - 1; i++) {
-            thePair = new Pair<E>(a.get(i), a.get(i + 1));
-            max = thePair.min();
+        for (int i = 0; i < a.size(); i++) {
+            thePair = new Pair<E>(max, a.get(i));
+            max = thePair.max();
         }
         return max;
     }
