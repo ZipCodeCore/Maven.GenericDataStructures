@@ -7,6 +7,9 @@ package Pair;
  * min -> returns the minimum of the pair
  * max -> returns the maximum of the pair
  */
-public class Pair {
+public class Pair<T, E> {
 
+    public T  min() {
+        return null;
+    }
 }
