@@ -1,5 +1,6 @@
 package TableNested;
 
+import Table.Table;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -22,6 +23,16 @@ public class TableNestedTest {
         Assert.assertEquals(table.get("foo"), new Integer(1));
         // And then we should be able to get it again as it wasn't removed
         Assert.assertEquals(table.get("foo"), new Integer(1));
+    }
+
+    @Test
+    public void sizeTest(){
+        TableNested<String, Integer> table = new TableNested<String, Integer>();
+        table.put("foo", 1);
+        table.put("foo", 2);
+        int expected = 1;
+        int actual = table.size();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test

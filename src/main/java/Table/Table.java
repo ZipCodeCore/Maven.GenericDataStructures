@@ -35,17 +35,20 @@ public class Table<K, V> {
     }
 
     public void put(K key, V value) {
-        entries.add(new Entry<>(key,value));
-    //not sure why the for loop won't work but I'll come back to that later
-/*       for (int i = 0; i < entries.size(); i++) {
-            K entryKey = entries.get(i).getKey();
-            if ((entries.get(i).getKey()).equals(key)) {
-                entries.set(i, new Entry<>(key,value));
-            } else {
-                entries.add(i, new Entry<>(key,value));
+        if(entries.size() == 0){
+            entries.add(new Entry<>(key,value));
+        }
+        else{
+            for (int i = 0; i < entries.size(); i++) {
+                K entryKey = entries.get(i).getKey();
+                if ((entries.get(i).getKey()).equals(key)) {
+                    entries.set(i, new Entry<>(key, value));
+                } else {
+                    entries.add(new Entry<>(key, value));
+                }
             }
         }
-*/
+
     }
 
     public void remove(K key) {

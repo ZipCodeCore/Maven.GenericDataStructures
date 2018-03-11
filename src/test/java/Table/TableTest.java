@@ -26,6 +26,16 @@ public class TableTest {
     }
 
     @Test
+    public void sizeTest(){
+        Table<String, Integer> table = new Table<String, Integer>();
+        table.put("foo", 1);
+        table.put("foo", 2);
+        int expected = 1;
+        int actual = table.size();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void testOverwritingAnItem() throws Exception {
         //Given an empty table
         Table<String, Integer> table = new Table<String, Integer>();
