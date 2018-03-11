@@ -27,7 +27,8 @@ public class Pair<E extends Comparable> {
     public E min(){
         if(first.compareTo(second)==1){
             return second;
-        } else return first;
+        }
+        return first;
     }
     public E max(){
         return first.compareTo(second)==1 ? first : second;
