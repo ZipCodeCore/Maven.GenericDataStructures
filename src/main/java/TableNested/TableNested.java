@@ -11,7 +11,6 @@ public class TableNested<K, V> {
 
     public TableNested() {
         this.entries = new ArrayList();
-
     }
 
     public V get(K key) {
