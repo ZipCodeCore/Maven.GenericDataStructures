@@ -10,7 +10,22 @@ public class Stack<E> {
     private ArrayList elements;
 
 
-    public Stack(){
+    public Stack() {
+        this.elements = new ArrayList<E>();
+    }
 
+    public E pop() {
+        E lastElement;
+        lastElement = (E) elements.get(elements.size() - 1);
+        elements.remove(lastElement);
+        return lastElement;
+    }
+
+    public void push(E elementToAdd) {
+        elements.add(elementToAdd);
+    }
+
+    public Boolean isEmpty() {
+        return elements.size() == 0;
     }
 }
