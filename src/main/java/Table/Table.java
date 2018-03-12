@@ -11,7 +11,21 @@ import java.util.ArrayList;
  */
 public class Table<K, V> {
     private ArrayList entries;
+    private Entry<K, V> entry;
 
     public Table() {
+    }
+    public V get(K key){
+        if(entry.getKey() != null){
+            return entry.getValue();
+            }
+            return null;
+        }
+
+    public void put(K key, V value){
+
+    }
+    public void remove(K key){
+
     }
 }
