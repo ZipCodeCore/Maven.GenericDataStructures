@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * If you pop on an empty stack, throw an IndexOutOfBoundsException.
  */
 public class Stack<E> {
-    private ArrayList elements;
+    private ArrayList<E> elements;
 
 
     public Stack(){
@@ -19,7 +19,7 @@ public class Stack<E> {
     }
 
     public E pop(){
-        E value = (E) elements.get(elements.size() -1);
+        E value = elements.get(elements.size() -1);
         elements.remove(elements.size() -1);
         return value;
     }
