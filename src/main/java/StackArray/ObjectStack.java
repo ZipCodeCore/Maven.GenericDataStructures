@@ -20,7 +20,9 @@ public class ObjectStack<E> {
     }
 
     public Object pop() throws IndexOutOfBoundsException{
-        return elements[elements.length-1];
+        Object result = elements[elements.length-1];
+        this.elements = Arrays.copyOf(elements, elements.length-1);
+        return result;
     }
 
     public boolean isEmpty(){

@@ -21,7 +21,9 @@ public class Stack<E> {
     }
 
     public E pop() throws IndexOutOfBoundsException{
-        return elements.get(elements.size()-1);
+        E result = elements.get(elements.size()-1);
+        elements.remove(result);
+        return result;
     }
 
     public boolean isEmpty(){

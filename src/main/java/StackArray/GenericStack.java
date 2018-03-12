@@ -21,7 +21,9 @@ public class GenericStack<E> {
     }
 
     public E pop() throws IndexOutOfBoundsException{
-        return elements[elements.length-1];
+        E result = elements[elements.length-1];
+        this.elements = Arrays.copyOf(elements, elements.length-1);
+        return result;
     }
 
     public boolean isEmpty(){
