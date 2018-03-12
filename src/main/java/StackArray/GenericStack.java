@@ -1,6 +1,5 @@
 package StackArray;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -27,13 +26,12 @@ public class GenericStack<E> {
                 temp[i + 1] = elements[i];
             }
         }
-
         temp[0] = aThing;
         elements = temp;
         return aThing;
     }
 
-    public E pop() {
+    public E pop() throws IndexOutOfBoundsException {
 
         if (elements.length == 0) {
             return null;
@@ -59,6 +57,5 @@ public class GenericStack<E> {
             return true;
         }
     }
-
 
 }

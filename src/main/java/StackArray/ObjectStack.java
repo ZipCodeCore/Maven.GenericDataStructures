@@ -30,7 +30,7 @@ public class ObjectStack<E> {
         return aThing;
     }
 
-    public Object pop() {
+    public Object pop() throws IndexOutOfBoundsException {
 
         if (elements.length == 0) {
             return null;
