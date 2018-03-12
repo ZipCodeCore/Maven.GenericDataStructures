@@ -30,7 +30,5 @@ public class Stack<E> {
         return (elements.size()==0);
     }
 
-    public E pop() {
-        return (E) this.elements;
-    }
+
 }
