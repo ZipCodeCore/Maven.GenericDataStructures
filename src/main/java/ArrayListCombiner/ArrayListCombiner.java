@@ -14,7 +14,7 @@ public class ArrayListCombiner {
         first.addAll(second);
     }
 
-    public static <E> void superCombiner (ArrayList<E> first, ArrayList<? extends E> second){
+    public static <E> void superCombiner (ArrayList<? super E> first, ArrayList<E> second){
         first.addAll(second);
     }
 }
@@ -24,4 +24,7 @@ public class ArrayListCombiner {
 //        append all of the items from the second to the first. superCombiner should use ? super E and extendCombiner
 //        should use ? extends E.
 
+//All the tests pass with this as the superCombiner but it's not done as asked
+//public static <E> void superCombiner (ArrayList<E> first, ArrayList<? extends E> second){
+//        first.addAll(second);
 
