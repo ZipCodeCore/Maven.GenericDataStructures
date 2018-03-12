@@ -8,8 +8,32 @@ import java.util.Arrays;
  * @param <E>
  */
 public class GenericStack<E> {
-    private E[] elements;
 
-    public GenericStack() {
+    private E[] elements = (E[]) new Object[0];
+
+    GenericStack() {
+
     }
+
+    public void push(E e) throws IndexOutOfBoundsException{
+        int newLength = elements.length +1;
+        E[] newArray = Arrays.copyOf(elements, newLength);
+        newArray[newArray.length -1] = e;
+        elements = newArray;
+
+    }
+
+    public E pop() throws IndexOutOfBoundsException{
+        int last = elements.length-1;
+        E  poppedElement= elements[last];
+        E[] newArray = Arrays.copyOf(elements, last);
+        elements = newArray;
+        return poppedElement;
+    }
+
+    public boolean isEmpty() throws IndexOutOfBoundsException{
+        return elements.length == 0;
+    }
+
+
 }
