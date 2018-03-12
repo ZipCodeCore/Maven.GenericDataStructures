@@ -9,8 +9,24 @@ import java.util.ArrayList;
 public class Stack<E> {
     private ArrayList elements;
 
-
     public Stack(){
+        this.elements = new ArrayList<E>();
+    }
 
+    public E push(E item) {
+        this.elements.add(item);
+        return item;
+    }
+
+    public E pop() {
+        return (E) this.elements.remove(elements.size() - 1);
+    }
+
+    public boolean isEmpty() {
+        if (this.elements.size() == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
