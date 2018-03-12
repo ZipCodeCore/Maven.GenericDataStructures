@@ -7,10 +7,25 @@ import java.util.ArrayList;
  * If you pop on an empty stack, throw an IndexOutOfBoundsException.
  */
 public class Stack<E> {
-    private ArrayList elements;
+    private ArrayList<E> elements;
 
 
-    public Stack(){
-
+    public Stack() {
+        this.elements = new ArrayList();
     }
-}
+
+    public boolean isEmpty() {//if the array is empty return true otherwise return false
+        if (elements.size() == 0) return true;
+        else return false;
+    }
+
+    //@SuppressWarnings("unchecked")
+    public void push(E foobar) {
+        elements.add(foobar);
+    }
+
+    //@SuppressWarnings("unchecked")
+    public E pop() {
+            return elements.remove(elements.size()-1);
+        }
+    }
