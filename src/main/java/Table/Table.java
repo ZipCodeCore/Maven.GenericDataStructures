@@ -53,5 +53,3 @@ public class Table<K, V> {
 }
 
 
-//Steps
-//made the ArrayList Manage the Entry entries

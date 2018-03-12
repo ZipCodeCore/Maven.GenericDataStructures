@@ -10,12 +10,10 @@ public class Entry<K, V> {
     }
 
     public K getKey() {
-
         return key;
     }
 
     public V getValue() {
-
         return value;
     }
 
