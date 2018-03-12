@@ -17,6 +17,7 @@ public class MapFunc
 
      */
 
+    //T is the Type and R is the return type against the T
     public static<T,R> ArrayList map(ArrayList<T> inputArrayList, Function<T,R> function)
     {
            ArrayList<R> values = new ArrayList<R>();
