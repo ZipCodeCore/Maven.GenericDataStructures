@@ -7,7 +7,7 @@ package Pair;
  * min -> returns the minimum of the pair
  * max -> returns the maximum of the pair
  */
-public class Pair <E extends Comparable<E>>  {
+public class Pair <E extends Comparable>  {
     //without extending you cannot compare generic types
     //by extending comparing individual values of generic types is now viable
     private E firstValue;
