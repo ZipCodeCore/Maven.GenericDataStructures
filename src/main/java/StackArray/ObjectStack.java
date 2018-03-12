@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * Expand the ArrayList implementation of stack here to use an Object[] array.  Still implement push, pop, and isEmpty.
  * Remember, you might need to resize the stack in the push method.
+ *
  * @param <E>
  */
 public class ObjectStack<E> {
@@ -18,35 +19,23 @@ public class ObjectStack<E> {
 
         Object[] temp = Arrays.copyOf(elements, elements.length + 1);
 
-        if (elements.length > 0) {
-
-            for (int i = 0; i < elements.length; i++) {
-                temp[i + 1] = elements[i];
-            }
-        }
-
-        temp[0] = aThing;
+        temp[elements.length] = aThing;
         elements = temp;
         return aThing;
     }
 
     public Object pop() throws IndexOutOfBoundsException {
 
-        if (elements.length == 0) {
-            return null;
-        } else {
+        Object poppedObj = elements[elements.length - 1];
+
+        if (elements.length > 0) {
             Object[] temp = Arrays.copyOf(elements, elements.length - 1);
-            int iterator = 0;
-
-            for (int i = 1; i < elements.length; i++) {
-                temp[iterator] = elements[i];
-                iterator++;
+            for (int i = 0; i < elements.length - 1; i++) {
+                temp[i] = elements[i];
             }
-
-            Object poppedObj = elements[0];
             elements = temp;
-            return poppedObj;
         }
+        return poppedObj;
     }
 
     public boolean isEmpty() {

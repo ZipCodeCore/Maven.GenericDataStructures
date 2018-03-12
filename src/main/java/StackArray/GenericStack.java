@@ -20,34 +20,23 @@ public class GenericStack<E> {
 
         E[] temp = Arrays.copyOf(elements, elements.length + 1);
 
-        if (elements.length > 0) {
-
-            for (int i = 0; i < elements.length; i++) {
-                temp[i + 1] = elements[i];
-            }
-        }
-        temp[0] = aThing;
+        temp[elements.length] = aThing;
         elements = temp;
         return aThing;
     }
 
     public E pop() throws IndexOutOfBoundsException {
 
-        if (elements.length == 0) {
-            return null;
-        } else {
+        E poppedObj = elements[elements.length - 1];
+
+        if (elements.length > 0) {
             E[] temp = Arrays.copyOf(elements, elements.length - 1);
-            int iterator = 0;
-
-            for (int i = 1; i < elements.length; i++) {
-                temp[iterator] = elements[i];
-                iterator++;
+            for (int i = 0; i < elements.length - 1; i++) {
+                temp[i] = elements[i];
             }
-
-            E poppedObj = elements[0];
             elements = temp;
-            return poppedObj;
         }
+        return poppedObj;
     }
 
     public boolean isEmpty() {

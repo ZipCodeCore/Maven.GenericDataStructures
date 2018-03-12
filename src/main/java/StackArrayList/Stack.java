@@ -1,6 +1,7 @@
 package StackArrayList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Implement Stack<E> by adding the push, pop, and isEmpty functions.  It must pass the prewritten unit tests.
@@ -15,16 +16,14 @@ public class Stack<E> {
     }
 
     public E push(E aThing) {
-        ArrayList temp = new ArrayList();
-        temp.add(aThing);
-        temp.addAll(elements);
-        elements = temp;
-        return (E)elements.get(0);
+
+        elements.add(aThing);
+        return (E)elements.get(elements.size() - 1);
     }
 
     public E pop() throws IndexOutOfBoundsException {
 
-        return (E)elements.remove(0);
+        return (E)elements.remove(elements.size() - 1);
 
     }
 
