@@ -17,6 +17,7 @@ public class GenericStack<E> {
     private final static int DEFAULT_Capacity = 10;
 
     public GenericStack() {
+
         this(DEFAULT_Capacity);
     }
 
@@ -26,10 +27,11 @@ public class GenericStack<E> {
     }
 
     public boolean isEmpty(){
+
         return (top == EMPTY);
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("uncheck")
     public E pop(){
         if (top == EMPTY){
             throw new IndexOutOfBoundsException();

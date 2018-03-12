@@ -25,6 +25,7 @@ public class ObjectStack<E> {
     }
 
     public boolean isEmpty() {
+
         return (top == EMPTY);
     }
 
@@ -37,6 +38,7 @@ public class ObjectStack<E> {
     }
 
     public void push(Object o) {
+
         elements[++top] = o;
     }
 

@@ -13,6 +13,7 @@ public class Stack<E>  {
     private ArrayList<E> elements;
 
     public Stack() {
+
         this.elements = new ArrayList();
     }
 
