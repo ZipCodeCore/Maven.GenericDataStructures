@@ -10,4 +10,13 @@ import java.util.ArrayList;
  */
 public class ArrayListCombiner {
 
+
+
+    public void superCombiner(){
+
+    }
+    public void extendCombiner(){
+
+    }
+
 }
