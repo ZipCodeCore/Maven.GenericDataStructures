@@ -1,5 +1,6 @@
 package Table;
 
+import java.lang.annotation.ElementType;
 import java.util.ArrayList;
 
 /**
@@ -10,8 +11,58 @@ import java.util.ArrayList;
  * Void return on `remove`.
  */
 public class Table<K, V> {
-    private ArrayList entries;
+    private ArrayList<Entry> entries;
 
     public Table() {
+        entries= new ArrayList<>();
     }
+
+//    public V get(K key){
+//
+//        for (Entry element: entries){
+//            if (element.getKey().equals(key)){
+//                return (V) element.getValue();
+//            }
+//        }
+//
+//        return null;
+//
+//    }
+
+    public V get(K key){
+
+        V ourLocalVariable = null;
+
+
+        for (Entry element: entries){
+            if (element.getKey().equals(key)){
+                ourLocalVariable =(V) element.getValue();
+            }
+        }
+
+        return ourLocalVariable;
+
+    }
+
+    public void put(K foo, V i){
+        Entry ourEntry = new Entry(foo, i);
+        for (Entry element: entries){
+            if (element.getKey().equals(ourEntry.getKey())){
+                entries.set(entries.indexOf(element),ourEntry);
+            }
+        }
+
+        entries.add(ourEntry);
+
+    }
+
+    public void remove(K foo){
+        for (Entry element: entries){
+            if (element.getKey().equals(foo)){
+                entries.remove(element);
+                break;
+            }
+        }
+    }
+
 }
