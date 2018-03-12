@@ -1,5 +1,7 @@
 package TableNested;
 
+
+
 import java.util.ArrayList;
 
 /**
@@ -8,4 +10,67 @@ import java.util.ArrayList;
  */
 public class TableNested<K, V> {
 
+    private ArrayList<Entry> entries;
+
+    public TableNested() {
+        this.entries = new ArrayList<>();
+
+    }
+
+    public V get(K key) {
+        for (Entry entry: entries) {
+            if (key.equals(entry.getKey()))
+                return (V) entry.getValue();
+
+        }
+
+        return null;
+    }
+
+
+    public void put(K key, V value) {
+        for (Entry entry: entries) {
+            if(key.equals(entry.getKey())) {
+                entry.setValue(value);
+                return;
+            }
+        } entries.add(new Entry(key, value));
+
+    }
+
+    public void remove(K key) {
+        for (Entry entry: entries) {
+            if (key.equals(entry.getKey()))
+                entries.remove(entry);
+            return;
+        }
+
+    }
 }
+
+
+class Entry<K, V> {
+    private K key;
+    private V value;
+
+    public Entry(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public K getKey() {
+        return key;
+    }
+
+    public V getValue() {
+        return value;
+    }
+
+    public void setKey(K key) {
+        this.key = key;
+    }
+    public void setValue(V value) {
+        this.value = value;
+    }
+}
+
