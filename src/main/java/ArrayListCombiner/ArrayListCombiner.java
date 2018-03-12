@@ -1,6 +1,8 @@
 package ArrayListCombiner;
 
+
 import java.util.ArrayList;
+
 
 /**
  * Create two generic methods that take two arraylists.  The methods should both append the second ArrayList's items,
@@ -11,12 +13,11 @@ import java.util.ArrayList;
 public class ArrayListCombiner {
 
 
-
-    public void superCombiner(){
-
+    public static <T> void superCombiner(ArrayList<? super T> first, ArrayList<T> second){
+        first.addAll(second);
     }
-    public void extendCombiner(){
-
+    public static <T> void extendCombiner(ArrayList<T> first, ArrayList<? extends T> second){
+        first.addAll(second);
     }
 
 }
