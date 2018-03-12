@@ -8,8 +8,7 @@ import java.util.ArrayList;
  */
 public class Stack<E> {
     private ArrayList elements;
-
-
+    
     public Stack(){
 
     }
