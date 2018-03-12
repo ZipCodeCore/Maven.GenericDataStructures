@@ -12,7 +12,13 @@ public class MapFunc {
     //okay katrice, so public method is because this test does not create a instance of MapFunc
     //The <T, R> when its static you have to define the generic so you can pass it into a static
     //We are returning an Arraylist of the results and they take in an ArrayList of type T
-    public static <T,R> ArrayList<R> map(ArrayList<T>, Function<T,R>){
+    public static <T,R> ArrayList<R> map(ArrayList<T> lists, Function<T,R> function){
+        ArrayList<R> result = new ArrayList<>();
+        for(T item: lists){
+            R entry = function.apply(item);
+            result.add(entry);
 
+        }
+        return result;
     }
 }
