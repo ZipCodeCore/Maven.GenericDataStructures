@@ -10,6 +10,37 @@ import java.util.Arrays;
 public class GenericStack<E> {
     private E[] elements;
 
-    public GenericStack() {
+    public GenericStack()
+    {
+        this.elements =  (E[]) new Object[0];
     }
+
+    public void push(E value)
+    {
+        E[] newArray = Arrays.copyOf(elements, elements.length +1);
+        newArray[newArray.length - 1] = value;
+        this.elements = newArray;
+    }
+    public boolean isEmpty()
+    {
+        if (this.elements.length == 0)
+        {
+            return true;
+        }
+        return false;
+
+    }
+
+
+    public E pop()
+    {
+        E value = elements[elements.length - 1];
+        E[] newArray = Arrays.copyOf(elements, elements.length - 1);
+        this.elements = newArray;
+        return value;
+    }
+
+
+
+
 }
