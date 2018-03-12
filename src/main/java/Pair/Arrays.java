@@ -10,7 +10,36 @@ import java.util.Collections;
  * A max method that returns the largest item in the arraylist
  * And a minmax method that returns a pair containing the largest and smallest items from the array list
  */
-//public class Arrays {
-//    public static <___> Pair<E> firstLast(ArrayList<___> a) {
-//    }
-//}
+public class Arrays {
+
+    public static <E extends Comparable> Pair<E> firstLast(ArrayList<E> a) {
+        return new Pair(a.get(0), a.get(a.size() - 1));
+    }
+
+
+    public static <E extends Comparable> Comparable min(ArrayList<E> al) {
+        return Collections.min(al);
+    }
+
+
+    public static <E extends Comparable> Comparable max(ArrayList<E> al) {
+        return Collections.max(al);
+    }
+
+    public static <E extends Comparable> Pair minMax(ArrayList<E> al) {
+        return new Pair<>(min(al), max(al));
+    }
+
+}
+
+
+
+//Pair -- This is a multi-step one:
+//        Create a Pair that stores a pair of elements of type E.
+//        Create two methods, min and max, that return the largest and smallest of the Pair.
+//        Create a utility class called Arrays and, in that, create a method
+//        public static <___> Pair<E> firstLast(ArrayList<___> a)
+//        That returns a Pair containing the first and last element of the array.
+//        NOTE: The <___> is there because you need to fill in the blank.
+//        In Arrays make two methods, min and max that returns the smallest and largest elements in the ArrayList.
+//        In Arrays make a minMax function that returns a Pair with the minimum and maximum values of the ArrayList.
