@@ -1,16 +1,24 @@
 package Swap;
-//
-//import org.junit.Assert;
-//import org.junit.Test;
-//
-///**
-// * Get the tests passing.
-// */
-//public class SwapTest {
-//    @Test
-//    public void testSwap() throws Exception {
-//        Double[] result = Swap.swap(0,1, 1.5, 2,3);
-//        Double[] expected = {2.0, 1.5, 3.0};
-//        Assert.assertArrayEquals(expected, result);
-//    }
-//}
+
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * Get the tests passing.
+ */
+public class SwapTest {
+    @Test
+    public void testSwap() throws Exception {
+        Double[] result = Swap.swap(0,1, 1.5, 2.0, 3.0);
+        Double[] expected = {2.0, 1.5, 3.0};
+        Assert.assertArrayEquals(expected, result);
+    }
+}
+
+//Explanation
+//Stating Generic T is equal to the indexes i of values
+//those indexes are also equal to the indexes j of values
+//and index j of values equals temp
+//now return values
+
+//so 1.5 is value i & 2.3 is value j
