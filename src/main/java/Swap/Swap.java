@@ -11,3 +11,9 @@ public class Swap {
         return values;
     }
 }
+
+//Explanation
+//Stating Generic T is equal to the indexes i of values
+//those indexes are also equal to the indexes j of values
+//and index j of values equals temp
+//now return values
