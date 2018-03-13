@@ -1,6 +1,8 @@
 package Pair;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * In here you must make firstLast, which will return a pair of the first element in the array list and the last
@@ -10,22 +12,22 @@ import java.util.ArrayList;
  * And a minmax method that returns a pair containing the largest and smallest items from the array list
  */
 public class Arrays {
-    public static <E> Pair<E> firstLast(ArrayList<E> a) {
+    public static <E extends Comparable<E>> Pair<E> firstLast(ArrayList<E> a) {
         E first = a.get(0);
         E second = a.get(a.size() - 1);
 
         return new Pair<>(first, second);
     }
 
-    public <E> E max(ArrayList<E> a) {
-        return null;
+    public <E extends Comparable<E>> E max(ArrayList<E> a) {
+        return Collections.max(a);
     }
 
-    public <E> E min(ArrayList<E> a) {
-        return null;
+    public <E extends Comparable<E>> E min(ArrayList<E> a) {
+        return Collections.min(a);
     }
 
-    public <E> Pair<E> minmax(ArrayList<E> a) {
-        return null;
+    public <E extends Comparable<E>> Pair<E> minmax(ArrayList<E> a) {
+        return new Pair<>(min(a), max(a));
     }
 }
