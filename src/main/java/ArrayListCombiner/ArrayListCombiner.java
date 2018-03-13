@@ -9,4 +9,11 @@ import java.util.ArrayList;
  * The second method should be called superCombiner and should use ? super E
  */
 public class ArrayListCombiner {
+    public static <E> void superCombiner(ArrayList<? super E> parent, ArrayList<E> child) {
+        parent.addAll(child);
+    }
+
+    public static <E> void extendCombiner(ArrayList<E> parent, ArrayList<? extends E> child) {
+        parent.addAll(child);
+    }
 }
