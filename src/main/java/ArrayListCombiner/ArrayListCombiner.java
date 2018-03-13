@@ -10,9 +10,10 @@ import java.util.ArrayList;
  */
 public class ArrayListCombiner {
     public static <E> void superCombiner(ArrayList<? super E> parent, ArrayList<E> child) {
-        
+        parent.addAll(child);
     }
 
     public static <E> void extendCombiner(ArrayList<E> parent, ArrayList<? extends E> child) {
+        parent.addAll(child);
     }
 }
