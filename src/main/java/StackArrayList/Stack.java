@@ -11,7 +11,7 @@ public class Stack<E> {
     private List<E> elements;
 
 
-    public Stack(){
+    public Stack() {
         elements = new ArrayList<>();
     }
 
@@ -20,7 +20,7 @@ public class Stack<E> {
     }
 
     public E pop() {
-        return elements.remove(elements.size()-1);
+        return elements.remove(elements.size() - 1);
     }
 
     public boolean isEmpty() {

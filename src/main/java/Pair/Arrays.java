@@ -2,7 +2,6 @@ package Pair;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 /**
  * In here you must make firstLast, which will return a pair of the first element in the array list and the last

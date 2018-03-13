@@ -11,5 +11,6 @@ import StackArrayList.Stack;
 public class ObjectStack<E> extends Stack<E> {
     private Object[] elements;
 
-    public ObjectStack() {}
+    public ObjectStack() {
+    }
 }
