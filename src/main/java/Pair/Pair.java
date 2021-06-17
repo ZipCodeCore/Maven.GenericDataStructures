@@ -42,6 +42,11 @@ public class Pair<E extends Comparable<? super E>> implements Comparable<Pair<E>
 
     @Override
     public int compareTo(Pair<E> o) {
+//        if(first.equals(o.getFirst())){
+//            return 0;
+//        } else if (){
+//            return 1;
+//        }
         return 0;
     }
 

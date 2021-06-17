@@ -55,7 +55,7 @@ public class TableTest {
         table.put("foo", 1);
         // And we remove that item
         table.remove("foo");
-        // Then we should get back null for that balue
+        // Then we should get back null for that value
         Assert.assertEquals(table.get("foo"), null);
     }
 }

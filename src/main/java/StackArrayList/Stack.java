@@ -7,6 +7,8 @@ import java.util.ArrayList;
  * If you pop on an empty stack, throw an IndexOutOfBoundsException.
  */
 public class Stack<E> {
+
+
     private ArrayList<E> elements;
 
 

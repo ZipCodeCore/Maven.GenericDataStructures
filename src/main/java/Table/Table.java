@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * Void return on `remove`.
  */
 public class Table<K, V> {
+
     private ArrayList<Entry<K, V>> entries;
 
     public Table() {
@@ -37,10 +38,8 @@ public class Table<K, V> {
     public void put(K key, V value) {
         if(entries.size() == 0){
             entries.add(new Entry<>(key,value));
-        }
-        else{
+        } else{
             for (int i = 0; i < entries.size(); i++) {
-                K entryKey = entries.get(i).getKey();
                 if ((entries.get(i).getKey()).equals(key)) {
                     entries.set(i, new Entry<>(key, value));
                 } else {
@@ -59,5 +58,7 @@ public class Table<K, V> {
             }
         }
     }
+
+
 
 }
