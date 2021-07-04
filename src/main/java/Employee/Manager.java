@@ -12,6 +12,7 @@ public class Manager extends Employee {
         this.bonus = bonus;
     }
 
+    @Override
     public double getSalary() { // Overrides superclass method
         return super.getSalary() + bonus;
     }
